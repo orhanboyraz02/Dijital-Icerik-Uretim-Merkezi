@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>Anadolu Network | Çoklu AI İçerik Üretim Merkezi</title>
+    <title>Anadolu Network | 9+ AI İçerik Üretim Merkezi</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
@@ -49,8 +49,8 @@
             gap: 15px;
             border: 1px solid rgba(212, 175, 55, 0.3);
         }
-        .nav-links { display: flex; gap: 25px; flex-wrap: wrap; }
-        .nav-links a { color: #f0f0f0; text-decoration: none; font-weight: 500; transition: 0.3s; }
+        .nav-links { display: flex; gap: 20px; flex-wrap: wrap; }
+        .nav-links a { color: #f0f0f0; text-decoration: none; font-weight: 500; transition: 0.3s; font-size: 0.9rem; }
         .nav-links a:hover { color: #d4af37; }
         .whatsapp-nav {
             background: #25D366;
@@ -112,7 +112,7 @@
         .export-buttons {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
+            gap: 8px;
             margin-top: 15px;
         }
         .export-buttons button {
@@ -215,7 +215,7 @@
         <div class="logo-circle"><i class="fas fa-robot"></i></div>
         <div class="brand-text">
             <h1>ANADOLU NETWORK</h1>
-            <p>Çoklu AI İçerik Üretim Merkezi | 10+ Yapay Zeka Modeli</p>
+            <p>9+ Yapay Zeka Modeli | Claude · Deepseek · Gemini · NanoBanana · ChatGPT · Verdent · Abacus · Grok · Perplexity</p>
         </div>
     </div>
 
@@ -223,7 +223,7 @@
     <div class="navbar">
         <div class="nav-links">
             <a href="#icerik">📝 İçerik Üret</a>
-            <a href="#ekitap">📚 E-Kitap Üret</a>
+            <a href="#ekitap">📚 100 Sayfa E-Kitap</a>
             <a href="#veritabani">📚 Veritabanlı AI</a>
             <a href="#referanslar">⭐ Referanslar</a>
             <a href="#paketler">💎 Üyelik</a>
@@ -241,29 +241,33 @@
         </div>
     </div>
 
-    <!-- İçerik Üretim Merkezi (Çoklu AI) -->
+    <!-- İçerik Üretim Merkezi - Tüm AI Modelleri -->
     <div class="card" id="icerik">
-        <h2><i class="fas fa-brain"></i> Çoklu AI İçerik Üretim Merkezi</h2>
+        <h2><i class="fas fa-brain"></i> 9+ Yapay Zeka Modeli ile İçerik Üret</h2>
         <div class="grid-2">
             <div>
                 <div class="ai-selector">
                     <label>🤖 Yapay Zeka Modeli Seç</label>
                     <select id="aiModel">
-                        <option value="Claude">Claude (Anthropic)</option>
-                        <option value="Deepseek">Deepseek</option>
-                        <option value="Gemini">Google Gemini</option>
-                        <option value="NanoBanana">NanoBanana</option>
-                        <option value="ChatGPT">ChatGPT (OpenAI)</option>
-                        <option value="Verdent">Verdent</option>
-                        <option value="Abacus">Abacus AI</option>
-                        <option value="Grok">Grok (xAI)</option>
-                        <option value="Perplexity">Perplexity AI</option>
+                        <optgroup label="⭐ Popüler Modeller">
+                            <option value="Claude">Claude (Anthropic)</option>
+                            <option value="Deepseek">Deepseek</option>
+                            <option value="Gemini">Google Gemini</option>
+                            <option value="ChatGPT">ChatGPT (OpenAI)</option>
+                        </optgroup>
+                        <optgroup label="🚀 Gelişmiş Modeller">
+                            <option value="NanoBanana">NanoBanana</option>
+                            <option value="Verdent">Verdent</option>
+                            <option value="Abacus">Abacus AI</option>
+                            <option value="Grok">Grok (xAI)</option>
+                            <option value="Perplexity">Perplexity AI</option>
+                        </optgroup>
                     </select>
                 </div>
                 <label>İçerik Türü</label>
                 <select id="contentType">
-                    <option value="E-Kitap Bölümü">📘 E-Kitap Bölümü</option>
                     <option value="Blog Metni">📄 Blog Metni / Makale</option>
+                    <option value="E-Kitap Bölümü">📘 E-Kitap Bölümü</option>
                     <option value="Video Senaryosu">🎥 Video Senaryosu</option>
                     <option value="Sosyal Medya İçeriği">📱 Sosyal Medya</option>
                     <option value="SEO/Google Ads">🔍 SEO / Google Ads</option>
@@ -278,7 +282,7 @@
                     <option value="Podcast">🎙️ Podcast Senaryosu</option>
                 </select>
                 <label>Konu / Anahtar Kelime</label>
-                <input type="text" id="topic" placeholder="Örn: Finansal Özgürlük, Liderlik">
+                <input type="text" id="topic" placeholder="Örn: Finansal Özgürlük, Yapay Zeka, Liderlik">
                 <label>Ek Notlar</label>
                 <textarea id="notes" rows="2" placeholder="Hedef kitle, ton, özel istekler..."></textarea>
                 <button onclick="generateContentWithAI()">✨ AI ile İçerik Oluştur</button>
@@ -296,15 +300,15 @@
             <div>
                 <h3>⚡ AI Modelleri Hakkında</h3>
                 <ul style="margin-left: 20px; line-height: 1.6; font-size: 0.85rem;">
-                    <li><strong>Claude:</strong> Uzun metinler, detaylı analiz</li>
-                    <li><strong>Deepseek:</strong> Kodlama, teknik içerik</li>
-                    <li><strong>Gemini:</strong> Çok modlu, görsel anlama</li>
+                    <li><strong>Claude:</strong> Uzun metinler, detaylı analiz, etik odaklı</li>
+                    <li><strong>Deepseek:</strong> Kodlama, teknik içerik, Çince/İngilizce</li>
+                    <li><strong>Gemini:</strong> Çok modlu, görsel anlama, Google entegrasyonu</li>
+                    <li><strong>ChatGPT:</strong> Genel amaçlı, yaratıcı, sohbet odaklı</li>
                     <li><strong>NanoBanana:</strong> Hafif, hızlı, düşük maliyetli</li>
-                    <li><strong>ChatGPT:</strong> Genel amaçlı, yaratıcı</li>
                     <li><strong>Verdent:</strong> Çevre, sürdürülebilirlik odaklı</li>
-                    <li><strong>Abacus:</strong> Yapay zeka, veri bilimi</li>
-                    <li><strong>Grok:</strong> Espritüel, farklı bakış açısı</li>
-                    <li><strong>Perplexity:</strong> Araştırma, kaynak gösterimi</li>
+                    <li><strong>Abacus:</strong> Yapay zeka, veri bilimi, analiz</li>
+                    <li><strong>Grok:</strong> Espritüel, farklı bakış açısı, mizah</li>
+                    <li><strong>Perplexity:</strong> Araştırma, kaynak gösterimi, güncel bilgi</li>
                 </ul>
             </div>
         </div>
@@ -406,7 +410,7 @@
             <div><i class="fas fa-map-marker-alt"></i> Nilüfer / BURSA</div>
             <div><i class="fas fa-globe"></i> <a href="https://anadolunetwork.tr" target="_blank">anadolunetwork.tr</a></div>
         </div>
-        <div style="margin-top: 15px; font-size: 0.7rem;">© 2025 Anadolu Network | Çoklu AI İçerik Üretim Merkezi | 10+ AI Modeli | 100 Sayfa E-Kitap Üretimi</div>
+        <div style="margin-top: 15px; font-size: 0.7rem;">© 2025 Anadolu Network | 9+ Yapay Zeka Modeli | 100 Sayfa E-Kitap Üretimi | Tüm hakları saklıdır.</div>
     </footer>
 </div>
 
@@ -418,7 +422,7 @@
     let lastGeneratedContent = "";
     let currentEbookContent = "";
     let knowledgeBase = JSON.parse(localStorage.getItem("knowledgeBase") || "[]");
-    let references = JSON.parse(localStorage.getItem("references") || "[{\"name\":\"Ahmet K., Girişimci\",\"text\":\"Harika bir platform! İçerik üretim süremi %70 kısalttı.\"},{\"name\":\"Zeynep T., Pazarlama Müdürü\",\"text\":\"Yapay zeka modelleri arasında geçiş yapmak çok kolay. Kesinlikle tavsiye ederim.\"}]");
+    let references = JSON.parse(localStorage.getItem("references") || "[{\"name\":\"Ahmet K., Girişimci\",\"text\":\"Harika bir platform! İçerik üretim süremi %70 kısalttı.\"},{\"name\":\"Zeynep T., Pazarlama Müdürü\",\"text\":\"9 farklı yapay zeka modeli arasında geçiş yapmak çok kolay. Kesinlikle tavsiye ederim.\"}]");
 
     function updateMembership() {
         let email = document.getElementById("userEmail").value;
@@ -450,7 +454,7 @@
         document.getElementById("totalContent").innerText = contentCount;
     }
 
-    // ---------- AI İçerik Üretimi ----------
+    // ---------- AI İçerik Üretimi (Tüm Modeller) ----------
     function generateContentWithAI() {
         const aiModel = document.getElementById("aiModel").value;
         const contentType = document.getElementById("contentType").value;
@@ -477,6 +481,7 @@
         lastGeneratedContent = result;
         document.getElementById("output").innerHTML = result.replace(/\n/g, '<br>');
         logAction(`İçerik üretildi: ${aiModel} - ${contentType} - ${styleType} - ${topic}`);
+        alert(`${aiModel} ile içerik oluşturuldu!`);
     }
 
     // ---------- 100 Sayfalık E-Kitap Üretimi ----------
@@ -493,7 +498,6 @@
             document.getElementById("progressFill").style.width = `${percent}%`;
             document.getElementById("progressText").innerHTML = `${i}/100 sayfa üretiliyor...`;
             
-            // Her sayfa için örnek içerik
             ebookContent += `## Sayfa ${i}\n\n`;
             ebookContent += `Bu sayfada ${topic} konusunun ${i}. bölümü ele alınmaktadır. `;
             ebookContent += `Yapay zeka teknolojileri günümüzde hızla gelişmekte ve hayatımızın her alanına entegre olmaktadır. `;
@@ -502,8 +506,7 @@
             ebookContent += `Özellikle ${i%5 === 0 ? 'derin öğrenme' : (i%3 === 0 ? 'doğal dil işleme' : 'bilgisayarlı görü')} alanındaki yenilikler detaylandırılmıştır.\n\n`;
             ebookContent += `---\n\n`;
             
-            // Sayfa yüklenme simülasyonu
-            await new Promise(resolve => setTimeout(resolve, 20));
+            await new Promise(resolve => setTimeout(resolve, 15));
         }
         
         ebookContent += `\n\n## Sonuç\n\nBu kitap ${topic} konusunda 100 sayfalık kapsamlı bir rehber sunmaktadır. Yapay zeka teknolojilerini anlamak ve uygulamak için temel bir kaynak niteliğindedir.\n\n`;
@@ -574,7 +577,10 @@
         outputDiv.style.padding = "20px";
         try {
             const canvas = await html2canvas(outputDiv, { scale: 2, backgroundColor: "#0a1a3a" });
-            saveAs(canvas.toDataURL(), `icerik_${new Date().toISOString().slice(0,19)}.png`);
+            const link = document.createElement("a");
+            link.download = `icerik_${new Date().toISOString().slice(0,19)}.png`;
+            link.href = canvas.toDataURL();
+            link.click();
         } catch(e) { alert("PNG oluşturulamadı"); }
         outputDiv.style.backgroundColor = "";
         outputDiv.style.padding = "";
@@ -587,7 +593,10 @@
         outputDiv.style.padding = "20px";
         try {
             const canvas = await html2canvas(outputDiv, { scale: 2, backgroundColor: "#0a1a3a" });
-            saveAs(canvas.toDataURL("image/jpeg", 0.9), `icerik_${new Date().toISOString().slice(0,19)}.jpg`);
+            const link = document.createElement("a");
+            link.download = `icerik_${new Date().toISOString().slice(0,19)}.jpg`;
+            link.href = canvas.toDataURL("image/jpeg", 0.9);
+            link.click();
         } catch(e) { alert("JPG oluşturulamadı"); }
         outputDiv.style.backgroundColor = "";
         outputDiv.style.padding = "";
