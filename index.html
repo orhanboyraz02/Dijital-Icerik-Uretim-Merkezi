@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Anadolu Network | Çoklu AI İçerik Üretim Merkezi</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background: #0a1a3a;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #f0f0f0;
+            padding-bottom: 20px;
+        }
+        .gold-text { color: #d4af37 !important; }
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            padding: 20px 20px 0 20px;
+        }
+        .logo-circle {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #d4af37, #b8860b);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.5);
+        }
+        .logo-circle i { font-size: 32px; color: #0a1a3a; }
+        .brand-text h1 { font-size: 1.8rem; color: #d4af37; }
+        .brand-text p { font-size: 0.8rem; opacity: 0.9; }
+        .navbar {
+            background: #0f2a4a;
+            padding: 12px 20px;
+            border-radius: 50px;
+            margin: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+        .nav-links { display: flex; gap: 25px; flex-wrap: wrap; }
+        .nav-links a { color: #f0f0f0; text-decoration: none; font-weight: 500; transition: 0.3s; }
+        .nav-links a:hover { color: #d4af37; }
+        .whatsapp-nav {
+            background: #25D366;
+            padding: 6px 16px;
+            border-radius: 40px;
+            color: white !important;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .container { max-width: 1400px; margin: 0 auto; padding: 0 20px; }
+        .card {
+            background: #0f2a4a;
+            border-radius: 28px;
+            padding: 24px;
+            margin-bottom: 30px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            transition: 0.2s;
+        }
+        .card:hover { border-color: #d4af37; }
+        h2 { color: #d4af37; margin-bottom: 20px; font-size: 1.6rem; border-left: 4px solid #d4af37; padding-left: 15px; }
+        h3 { color: #d4af37; margin: 15px 0 10px 0; }
+        .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; }
+        select, textarea, input {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0;
+            background: #07152e;
+            border: 1px solid #2a456b;
+            color: #d4af37;
+            border-radius: 16px;
+            font-size: 0.9rem;
+        }
+        button {
+            background: #d4af37;
+            color: #0a1a3a;
+            font-weight: bold;
+            border: none;
+            border-radius: 40px;
+            padding: 12px;
+            width: 100%;
+            cursor: pointer;
+            transition: 0.2s;
+            margin-top: 10px;
+            font-size: 0.9rem;
+        }
+        button:hover { background: #b8962e; transform: scale(1.01); }
+        .output-box {
+            background: #07152e80;
+            border-left: 4px solid #d4af37;
+            border-radius: 16px;
+            padding: 15px;
+            margin-top: 15px;
+            font-size: 0.9rem;
+            white-space: pre-line;
+        }
+        .packages { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; }
+        .package-card {
+            background: #07152e;
+            border-radius: 24px;
+            padding: 20px;
+            flex: 1;
+            min-width: 200px;
+            text-align: center;
+            border: 1px solid #d4af37;
+            transition: 0.2s;
+        }
+        .package-card:hover { transform: translateY(-5px); background: #0f2a4a; }
+        .package-price { font-size: 1.8rem; font-weight: bold; color: #d4af37; margin: 15px 0; }
+        .package-features { list-style: none; text-align: left; margin: 15px 0; }
+        .package-features li { padding: 5px 0; font-size: 0.85rem; }
+        .whatsapp-btn {
+            background: #25D366;
+            color: white;
+            display: inline-block;
+            padding: 8px 20px;
+            border-radius: 40px;
+            text-decoration: none;
+            margin-top: 10px;
+            font-size: 0.8rem;
+        }
+        footer {
+            background: #0f2a4a;
+            border-top: 4px solid #d4af37;
+            padding: 25px 20px;
+            margin-top: 40px;
+            text-align: center;
+        }
+        footer a { color: #d4af37; text-decoration: none; }
+        .footer-contact { display: flex; flex-wrap: wrap; justify-content: center; gap: 25px; margin: 15px 0; }
+        .hidden { display: none; }
+        .admin-panel {
+            background: #07152e;
+            border-radius: 20px;
+            padding: 15px;
+            margin-top: 15px;
+        }
+        .flex-between { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
+        .user-badge {
+            background: #d4af37;
+            color: #0a1a3a;
+            padding: 4px 12px;
+            border-radius: 40px;
+            font-size: 0.7rem;
+            font-weight: bold;
+        }
+        .ai-selector {
+            background: #07152e;
+            border-radius: 16px;
+            padding: 10px;
+            margin-bottom: 15px;
+        }
+        .knowledge-item {
+            background: #1e3a5f;
+            border-radius: 12px;
+            padding: 8px;
+            margin: 5px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        @media (max-width: 768px) { .navbar { flex-direction: column; text-align: center; } }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Logo -->
+    <div class="logo-area">
+        <div class="logo-circle"><i class="fas fa-robot"></i></div>
+        <div class="brand-text">
+            <h1>ANADOLU NETWORK</h1>
+            <p>Çoklu AI İçerik Üretim Merkezi | Claude · Deepseek · Gemini · NanoBanana · ChatGPT</p>
+        </div>
+    </div>
+
+    <!-- Navigasyon -->
+    <div class="navbar">
+        <div class="nav-links">
+            <a href="#icerik">📝 İçerik Üret</a>
+            <a href="#veritabani">📚 Veritabanlı AI (Notebook LM)</a>
+            <a href="#paketler">💎 Üyelik Paketleri</a>
+            <a href="#iletisim">📞 İletişim</a>
+            <a href="#" id="showAdminBtn">🔐 Yönetim Paneli</a>
+        </div>
+        <a href="https://wa.me/905418660202" target="_blank" class="whatsapp-nav"><i class="fab fa-whatsapp"></i> 0541 866 02 02</a>
+    </div>
+
+    <!-- Abonelik Durumu -->
+    <div class="card" style="padding: 15px;">
+        <div class="flex-between">
+            <div><strong>👤 Abonelik:</strong> <span id="membershipStatus" class="user-badge">Ücretsiz (Free)</span></div>
+            <div><strong>📧 E-posta:</strong> <input type="email" id="userEmail" placeholder="ornek@mail.com" style="width: auto; padding: 5px 10px;"></div>
+            <button onclick="updateMembership()" style="width: auto;">Aboneliği Güncelle</button>
+        </div>
+    </div>
+
+    <!-- İçerik Üretim Merkezi (Çoklu AI) -->
+    <div class="card" id="icerik">
+        <h2><i class="fas fa-brain"></i> Çoklu AI İçerik Üretim Merkezi</h2>
+        <div class="grid-2">
+            <div>
+                <div class="ai-selector">
+                    <label>🤖 Yapay Zeka Modeli Seç</label>
+                    <select id="aiModel">
+                        <option value="Claude">Claude (Anthropic)</option>
+                        <option value="Deepseek">Deepseek</option>
+                        <option value="Gemini">Google Gemini</option>
+                        <option value="NanoBanana">NanoBanana</option>
+                        <option value="ChatGPT">ChatGPT (OpenAI)</option>
+                    </select>
+                </div>
+                <label>İçerik Türü</label>
+                <select id="contentType">
+                    <option value="E-Kitap Bölümü">📘 E-Kitap Bölümü</option>
+                    <option value="Blog Metni">📄 Blog Metni / Makale</option>
+                    <option value="Video Senaryosu">🎥 Video Senaryosu</option>
+                    <option value="Sosyal Medya İçeriği">📱 Sosyal Medya</option>
+                    <option value="SEO/Google Ads">🔍 SEO / Google Ads</option>
+                    <option value="Logo Fikri">🎨 Logo Tasarım Fikri</option>
+                    <option value="Çeviri">🌍 Çeviri (TR↔EN)</option>
+                </select>
+                <label>Anlatım Stili</label>
+                <select id="styleType">
+                    <option value="Motivasyon">🔥 Motivasyon / İlham</option>
+                    <option value="Akademik">📚 Akademik / Araştırma</option>
+                    <option value="Hikaye/Kurgu">📖 Hikaye / Kurgu</option>
+                    <option value="Podcast">🎙️ Podcast Senaryosu</option>
+                </select>
+                <label>Konu / Anahtar Kelime</label>
+                <input type="text" id="topic" placeholder="Örn: Finansal Özgürlük, Liderlik">
+                <label>Ek Notlar</label>
+                <textarea id="notes" rows="3" placeholder="Hedef kitle, ton, özel istekler..."></textarea>
+                <button onclick="generateContentWithAI()">✨ AI ile İçerik Oluştur</button>
+                <div id="output" class="output-box">Seçtiğiniz AI modeli ile içerik burada üretilecek.</div>
+            </div>
+            <div>
+                <h3>⚡ AI Modelleri Hakkında</h3>
+                <ul style="margin-left: 20px; line-height: 1.8;">
+                    <li><strong>Claude:</strong> Uzun metinler, detaylı analiz, etik odaklı</li>
+                    <li><strong>Deepseek:</strong> Kodlama, teknik içerik, Çince/İngilizce desteği</li>
+                    <li><strong>Gemini:</strong> Çok modlu, görsel anlama, Google entegrasyonu</li>
+                    <li><strong>NanoBanana:</strong> Hafif, hızlı, düşük maliyetli</li>
+                    <li><strong>ChatGPT:</strong> Genel amaçlı, yaratıcı içerik, sohbet odaklı</li>
+                </ul>
+                <div class="output-box" style="margin-top: 20px;">
+                    💡 <strong>Not:</strong> Demo modda çalışmaktadır. Gerçek API anahtarlarınızla entegre edebilirsiniz.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Veritabanlı AI (Notebook LM tarzı) -->
+    <div class="card" id="veritabani">
+        <h2><i class="fas fa-database"></i> Veritabanlı AI (Notebook LM Tarzı)</h2>
+        <div class="grid-2">
+            <div>
+                <label>📁 Bilgi Bankasına Doküman Ekle</label>
+                <textarea id="docContent" rows="3" placeholder="Metin, notlar, makaleler, PDF içeriği..."></textarea>
+                <button onclick="addDocument()">📄 Doküman Ekle</button>
+                <div id="knowledgeList" class="output-box" style="margin-top: 10px; max-height: 200px; overflow-y: auto;"></div>
+            </div>
+            <div>
+                <label>🔍 Bilgi Bankasına Soru Sor</label>
+                <input type="text" id="queryInput" placeholder="Yüklediğiniz dokümanlarla ilgili bir soru sorun">
+                <button onclick="queryKnowledgeBase()">🤖 AI Cevaplasın</button>
+                <div id="queryResult" class="output-box">Burada bilgi bankanızdan yanıt alacaksınız.</div>
+                <button onclick="clearKnowledgeBase()" style="background:#be123c; color:white;">🗑️ Tüm Dokümanları Sil</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Paketler -->
+    <div class="card" id="paketler">
+        <h2><i class="fas fa-gem"></i> Üyelik Paketleri</h2>
+        <div class="packages">
+            <div class="package-card"><h3>🎁 FREE</h3><div class="package-price">0 ₺</div><ul class="package-features"><li>✅ 5 AI model</li><li>✅ Günde 3 içerik</li><li>✅ 4 anlatım stili</li></ul><a href="https://wa.me/905418660202?text=Free%20pakete%20kaydolmak%20istiyorum" class="whatsapp-btn">Başla</a></div>
+            <div class="package-card"><h3>🚀 PRO</h3><div class="package-price">1.499 ₺/yıl</div><ul class="package-features"><li>✅ Sınırsız içerik</li><li>✅ Tüm AI modeller</li><li>✅ Veritabanlı AI</li></ul><a href="https://wa.me/905418660202?text=PRO%20paketi%20satın%20almak%20istiyorum.%201499₺" class="whatsapp-btn">Satın Al</a></div>
+            <div class="package-card"><h3>👑 PREMIUM</h3><div class="package-price">3.499 ₺/yıl</div><ul class="package-features"><li>✅ Tüm Pro özellikler</li><li>✅ Özel prompt şablonları</li><li>✅ Öncelikli destek</li></ul><a href="https://wa.me/905418660202?text=PREMIUM%20paketi%20satın%20almak%20istiyorum.%203499₺" class="whatsapp-btn">Satın Al</a></div>
+            <div class="package-card"><h3>🏆 ELITE VIP</h3><div class="package-price">6.999 ₺/yıl</div><ul class="package-features"><li>✅ Tüm Premium özellikler</li><li>✅ Birebir AI koçluğu</li><li>✅ 7/24 WhatsApp danışmanlık</li></ul><a href="https://wa.me/905418660202?text=ELITE%20VIP%20paketini%20satın%20almak%20istiyorum.%206999₺" class="whatsapp-btn">Satın Al</a></div>
+        </div>
+    </div>
+
+    <!-- Yönetim Paneli -->
+    <div id="adminModal" class="card hidden">
+        <h2><i class="fas fa-lock"></i> Yönetim Paneli (Şifreli)</h2>
+        <div class="flex-between"><input type="password" id="adminPass" placeholder="Yönetici Şifresi" style="flex:1"><button onclick="checkAdmin()" style="width:auto;">Giriş</button></div>
+        <div id="adminContent" class="hidden admin-panel">
+            <h3>📊 İstatistikler</h3>
+            <p><strong>Toplam İçerik Üretimi:</strong> <span id="totalContent">0</span></p>
+            <p><strong>Aktif Aboneler:</strong> 89</p>
+            <button onclick="exportData()">Verileri Dışa Aktar (CSV)</button>
+            <hr style="margin: 15px 0;">
+            <h4>📋 Kullanıcı Logları</h4>
+            <div id="adminLogs">Yükleniyor...</div>
+            <button onclick="clearAllLogs()" style="background:#be123c; color:white;">Tüm Logları Temizle</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer id="iletisim">
+        <div class="footer-contact">
+            <div><i class="fab fa-whatsapp"></i> <a href="https://wa.me/905418660202">0541 866 02 02</a></div>
+            <div><i class="fas fa-envelope"></i> <a href="mailto:orhanboyraz0216@gmail.com">orhanboyraz0216@gmail.com</a></div>
+            <div><i class="fas fa-map-marker-alt"></i> Nilüfer / BURSA</div>
+            <div><i class="fas fa-globe"></i> <a href="https://anadolunetwork.tr" target="_blank">anadolunetwork.tr</a></div>
+        </div>
+        <div style="margin-top: 15px; font-size: 0.75rem;">© 2025 Anadolu Network | Çoklu AI İçerik Üretim Merkezi | Demo sürüm - API anahtarlarınızla entegre edebilirsiniz.</div>
+    </footer>
+</div>
+
+<script>
+    // ---------- Abonelik ve Kullanıcı ----------
+    let currentMembership = localStorage.getItem("userMembership") || "Free";
+    let userEmail = localStorage.getItem("userEmail") || "";
+    let contentCount = parseInt(localStorage.getItem("totalContentCount") || "0");
+
+    function updateMembership() {
+        let email = document.getElementById("userEmail").value;
+        if(!email) { alert("E-posta girin"); return; }
+        localStorage.setItem("userEmail", email);
+        userEmail = email;
+        let newPlan = prompt("Abonelik planı seçin:\nFree / Pro / Premium / Elite VIP", currentMembership);
+        if(newPlan && ["Free","Pro","Premium","Elite VIP"].includes(newPlan)) {
+            currentMembership = newPlan;
+            localStorage.setItem("userMembership", currentMembership);
+            document.getElementById("membershipStatus").innerHTML = currentMembership;
+            logAction(`Abonelik değiştirildi: ${currentMembership}`);
+            alert(`${currentMembership} planına geçtiniz! WhatsApp ile ödeme yaparak aktif edebilirsiniz.`);
+        }
+    }
+
+    function logAction(action) {
+        let logs = JSON.parse(localStorage.getItem("anadolu_content_logs") || "[]");
+        logs.push({ date: new Date().toLocaleString(), action: action, user: userEmail || "Misafir", plan: currentMembership });
+        localStorage.setItem("anadolu_content_logs", JSON.stringify(logs));
+        updateContentCount();
+    }
+
+    function updateContentCount() {
+        let logs = JSON.parse(localStorage.getItem("anadolu_content_logs") || "[]");
+        let contentLogs = logs.filter(l => l.action.includes("İçerik üretildi"));
+        contentCount = contentLogs.length;
+        localStorage.setItem("totalContentCount", contentCount);
+        document.getElementById("totalContent").innerText = contentCount;
+    }
+
+    // ---------- AI İçerik Üretimi (Demo Simülasyon) ----------
+    async function generateContentWithAI() {
+        const aiModel = document.getElementById("aiModel").value;
+        const contentType = document.getElementById("contentType").value;
+        const styleType = document.getElementById("styleType").value;
+        const topic = document.getElementById("topic").value.trim();
+        const notes = document.getElementById("notes").value.trim();
+        if(!topic) { alert("Lütfen bir konu girin!"); return; }
+
+        let result = `🤖 **AI Model:** ${aiModel}\n📌 **Tür:** ${contentType} | 🎭 **Stil:** ${styleType}\n📢 **Konu:** ${topic}\n📝 **Notlar:** ${notes || "—"}\n\n---\n\n`;
+
+        // Demo içerik (gerçek API için aşağıdaki gibi bir yapı kullanılabilir)
+        // Gerçek entegrasyon için ilgili API'ye istek atılmalıdır.
+        
+        if(styleType === "Motivasyon") {
+            result += `🔥 MOTİVASYON İÇERİĞİ (${aiModel} ile üretilmiştir):\n\n${topic} yolculuğunda bugün bir adım öne geçme zamanı! Hayallerinize ulaşmak için harekete geçin. Başarı, küçük adımlarla başlar. 💪\n\n"${topic} konusunda uzmanlaşmak için bugün ilk adımı atın!"`;
+        } 
+        else if(styleType === "Akademik") {
+            result += `📚 AKADEMİK İÇERİK (${aiModel}):\n\nGiriş: ${topic} günümüzde kritik öneme sahiptir. Yapılan araştırmalar (2024) ${topic} alanında yıllık %15 büyüme olduğunu göstermektedir. Bu çalışmada, ${topic} stratejilerinin etkinliği incelenecektir. Sonuç olarak, veri odaklı yaklaşımlar başarıyı artırmaktadır.`;
+        }
+        else if(styleType === "Hikaye/Kurgu") {
+            result += `📖 HİKAYE (${aiModel}):\n\nBir zamanlar ${topic} konusunda kararsız kalmış bir genç vardı: Elif. Her sabah uyandığında içinde bir heyecan, ama aynı zamanda bir korku… Bir gün yaşlı bir bilge ona şöyle dedi: “${topic} aslında senin içindeki cesaretle başlar.” Elif o gün ilk adımını attı.`;
+        }
+        else {
+            result += `🎙️ PODCAST SENARYOSU (${aiModel}):\n\nBölüm: ${topic}\n\nSunucu: “Bugünkü konumuz ${topic}. Bu konuyu derinlemesine ele alacağız.”\n\nUzman: “${topic} aslında çok katmanlı bir kavram. Öncelikle şunu belirtmek isterim ki…”\n\nKapanış: “Bir sonraki bölümde görüşmek üzere!”`;
+        }
+        
+        if(contentType === "SEO/Google Ads") result += "\n\n🔍 SEO Notu: Anahtar kelime yoğunluğu %2-3 arasında olmalıdır.";
+        
+        document.getElementById("output").innerHTML = result.replace(/\n/g, '<br>');
+        logAction(`İçerik üretildi: ${aiModel} - ${contentType} - ${styleType} - ${topic}`);
+    }
+
+    // ---------- Veritabanlı AI (Notebook LM Tarzı) ----------
+    let knowledgeBase = JSON.parse(localStorage.getItem("knowledgeBase") || "[]");
+
+    function renderKnowledgeList() {
+        const container = document.getElementById("knowledgeList");
+        if(!container) return;
+        if(knowledgeBase.length === 0) {
+            container.innerHTML = "Henüz doküman eklenmemiş.";
+            return;
+        }
+        let html = "";
+        knowledgeBase.forEach((doc, idx) => {
+            html += `<div class="knowledge-item">
+                        <span><strong>Doküman ${idx+1}:</strong> ${doc.content.substring(0, 60)}${doc.content.length>60 ? "..." : ""}</span>
+                        <button onclick="deleteDocument(${idx})" style="width:auto; padding:4px 10px; margin:0;">🗑️ Sil</button>
+                     </div>`;
+        });
+        container.innerHTML = html;
+    }
+
+    function addDocument() {
+        const content = document.getElementById("docContent").value.trim();
+        if(!content) { alert("Lütfen doküman içeriği girin"); return; }
+        knowledgeBase.push({ content: content, date: new Date().toLocaleString() });
+        localStorage.setItem("knowledgeBase", JSON.stringify(knowledgeBase));
+        renderKnowledgeList();
+        document.getElementById("docContent").value = "";
+        logAction("Doküman eklendi (Veritabanlı AI)");
+        alert("Doküman bilgi bankasına eklendi.");
+    }
+
+    function deleteDocument(idx) {
+        knowledgeBase.splice(idx, 1);
+        localStorage.setItem("knowledgeBase", JSON.stringify(knowledgeBase));
+        renderKnowledgeList();
+        logAction("Doküman silindi");
+    }
+
+    function queryKnowledgeBase() {
+        const query = document.getElementById("queryInput").value.trim();
+        if(!query) { alert("Lütfen bir soru girin"); return; }
+        if(knowledgeBase.length === 0) {
+            document.getElementById("queryResult").innerHTML = "❌ Bilgi bankanız boş. Lütfen önce doküman ekleyin.";
+            return;
+        }
+        // Basit demo yanıt: ilgili dokümanlardan alıntı yapar
+        let relevantDocs = knowledgeBase.filter(doc => doc.content.toLowerCase().includes(query.toLowerCase()));
+        if(relevantDocs.length === 0) {
+            document.getElementById("queryResult").innerHTML = `🤖 AI Yanıtı: "${query}" ile ilgili bilgi bankanızda doğrudan bir eşleşme bulunamadı. Lütfen daha spesifik bir soru sorun veya yeni doküman ekleyin.`;
+        } else {
+            let answer = `🤖 AI (${knowledgeBase.length} doküman içinden) yanıtlıyor:\n\n`;
+            answer += `🔍 "${query}" ile ilgili ${relevantDocs.length} dokümanda bilgi bulundu.\n\n`;
+            answer += `📄 Örnek alıntı:\n"${relevantDocs[0].content.substring(0, 300)}..."\n\n`;
+            answer += `💡 Özet: Sorunuza en uygun yanıt, yüklediğiniz dokümanlara dayanmaktadır. Daha kesin sonuçlar için daha fazla doküman yükleyebilirsiniz.`;
+            document.getElementById("queryResult").innerHTML = answer.replace(/\n/g, '<br>');
+        }
+        logAction(`Veritabanlı AI sorgusu: ${query}`);
+    }
+
+    function clearKnowledgeBase() {
+        if(confirm("Tüm dokümanlar silinecek. Emin misiniz?")) {
+            knowledgeBase = [];
+            localStorage.setItem("knowledgeBase", JSON.stringify(knowledgeBase));
+            renderKnowledgeList();
+            alert("Bilgi bankası temizlendi.");
+            logAction("Tüm dokümanlar silindi");
+        }
+    }
+
+    // ---------- Yönetim Paneli ----------
+    function checkAdmin() {
+        let pwd = document.getElementById("adminPass").value;
+        if(pwd === "admin2026") {
+            document.getElementById("adminContent").classList.remove("hidden");
+            loadAdminLogs();
+            document.getElementById("totalContent").innerText = contentCount;
+        } else { alert("Şifre hatalı!"); }
+    }
+
+    function loadAdminLogs() {
+        let logs = JSON.parse(localStorage.getItem("anadolu_content_logs") || "[]");
+        let logDiv = document.getElementById("adminLogs");
+        if(logs.length === 0) logDiv.innerHTML = "Henüz log kaydı yok.";
+        else {
+            let html = "<ul>";
+            logs.slice(-15).reverse().forEach(l => { html += `<li>${l.date} - ${l.user} (${l.plan}) : ${l.action}</li>`; });
+            html += "</ul>";
+            logDiv.innerHTML = html;
+        }
+    }
+
+    function clearAllLogs() {
+        if(confirm("Tüm logları silmek istediğinize emin misiniz?")) {
+            localStorage.removeItem("anadolu_content_logs");
+            contentCount = 0;
+            localStorage.setItem("totalContentCount", "0");
+            loadAdminLogs();
+            document.getElementById("totalContent").innerText = "0";
+            alert("Loglar temizlendi.");
+        }
+    }
+
+    function exportData() {
+        let logs = JSON.parse(localStorage.getItem("anadolu_content_logs") || "[]");
+        let csv = "Tarih,Kullanıcı,Plan,Aksiyon\n";
+        logs.forEach(l => { csv += `"${l.date}","${l.user}","${l.plan}","${l.action}"\n`; });
+        let blob = new Blob([csv], {type: "text/csv"});
+        let a = document.createElement("a");
+        a.href = URL.createObjectURL(blob);
+        a.download = "anadolu_content_logs.csv";
+        a.click();
+    }
+
+    // Admin Modal
+    document.getElementById("showAdminBtn").addEventListener("click", function(e) {
+        e.preventDefault();
+        let modal = document.getElementById("adminModal");
+        modal.classList.toggle("hidden");
+        if(!modal.classList.contains("hidden")) {
+            document.getElementById("adminContent").classList.add("hidden");
+            document.getElementById("adminPass").value = "";
+        }
+    });
+
+    // Sayfa yükleniyor
+    document.getElementById("membershipStatus").innerHTML = currentMembership;
+    if(userEmail) document.getElementById("userEmail").value = userEmail;
+    renderKnowledgeList();
+    updateContentCount();
+    logAction("Sayfa ziyaret edildi");
+</script>
+</body>
+</html>
