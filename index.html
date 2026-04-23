@@ -35,8 +35,8 @@
             box-shadow: 0 0 15px rgba(212, 175, 55, 0.5);
         }
         .logo-circle i { font-size: 32px; color: #0a1a3a; }
-        .brand-text h1 { font-size: 1.8rem; color: #d4af37; }
-        .brand-text p { font-size: 0.8rem; opacity: 0.9; }
+        .brand-text h1 { font-size: 1.6rem; color: #d4af37; }
+        .brand-text p { font-size: 0.75rem; opacity: 0.9; }
         .navbar {
             background: #0f2a4a;
             padding: 12px 20px;
@@ -50,7 +50,7 @@
             border: 1px solid rgba(212, 175, 55, 0.3);
         }
         .nav-links { display: flex; gap: 20px; flex-wrap: wrap; }
-        .nav-links a { color: #f0f0f0; text-decoration: none; font-weight: 500; transition: 0.3s; font-size: 0.9rem; }
+        .nav-links a { color: #f0f0f0; text-decoration: none; font-weight: 500; transition: 0.3s; font-size: 0.9rem; cursor: pointer; }
         .nav-links a:hover { color: #d4af37; }
         .whatsapp-nav {
             background: #25D366;
@@ -60,6 +60,7 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
+            text-decoration: none;
         }
         .container { max-width: 1400px; margin: 0 auto; padding: 0 20px; }
         .card {
@@ -71,7 +72,7 @@
             transition: 0.2s;
         }
         .card:hover { border-color: #d4af37; }
-        h2 { color: #d4af37; margin-bottom: 20px; font-size: 1.6rem; border-left: 4px solid #d4af37; padding-left: 15px; }
+        h2 { color: #d4af37; margin-bottom: 20px; font-size: 1.4rem; border-left: 4px solid #d4af37; padding-left: 15px; }
         h3 { color: #d4af37; margin: 15px 0 10px 0; }
         .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; }
         select, textarea, input {
@@ -105,7 +106,7 @@
             padding: 15px;
             margin-top: 15px;
             font-size: 0.9rem;
-            white-space: pre-line;
+            white-space: pre-wrap;
             max-height: 400px;
             overflow-y: auto;
         }
@@ -141,11 +142,11 @@
             background: #25D366;
             color: white;
             display: inline-block;
-            padding: 6px 15px;
+            padding: 8px 20px;
             border-radius: 40px;
             text-decoration: none;
             margin-top: 10px;
-            font-size: 0.75rem;
+            font-size: 0.8rem;
         }
         footer {
             background: #0f2a4a;
@@ -181,14 +182,15 @@
         .knowledge-item, .reference-item {
             background: #1e3a5f;
             border-radius: 12px;
-            padding: 8px;
-            margin: 5px 0;
+            padding: 10px;
+            margin: 8px 0;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            font-size: 0.8rem;
+            flex-wrap: wrap;
+            gap: 10px;
         }
-        .reference-item { flex-direction: column; align-items: flex-start; gap: 5px; }
+        .reference-item { flex-direction: column; align-items: flex-start; }
         .reference-text { font-style: italic; }
         .reference-author { color: #d4af37; font-weight: bold; }
         .ebook-progress { margin: 10px 0; }
@@ -207,7 +209,7 @@
         .api-settings {
             background: #07152e;
             border-radius: 16px;
-            padding: 10px;
+            padding: 15px;
             margin-top: 10px;
         }
         .content-icons {
@@ -226,13 +228,12 @@
             transition: 0.2s;
             border: 1px solid rgba(212, 175, 55, 0.3);
         }
-        .icon-card:hover { transform: translateY(-3px); border-color: #d4af37; }
         .icon-card i { font-size: 2rem; color: #d4af37; margin-bottom: 8px; }
         .icon-card span { font-size: 0.7rem; display: block; }
         .free-upgrade {
             background: linear-gradient(135deg, #d4af37, #b8860b);
             color: #0a1a3a;
-            padding: 12px;
+            padding: 15px;
             border-radius: 16px;
             text-align: center;
             margin-top: 15px;
@@ -249,7 +250,7 @@
     <div class="logo-area">
         <div class="logo-circle"><i class="fas fa-robot"></i></div>
         <div class="brand-text">
-            <h1>ANADOLU NETWORK; DİJİTAL İÇERİK ÜRETİM MERKEZİ</h1>
+            <h1>ANADOLU NETWORK</h1>
             <p>10 Yapay Zeka Modeli | Gemini AI Entegre | Proje Bazlı İçerik Üretim Merkezi</p>
         </div>
     </div>
@@ -257,63 +258,28 @@
     <!-- Navigasyon -->
     <div class="navbar">
         <div class="nav-links">
-            <a href="#icerik">📝 İçerik Üret</a>
-            <a href="#ekitap">📚 E-Kitap</a>
-            <a href="#veritabani">📚 Veritabanlı AI</a>
-            <a href="#referanslar">⭐ Referanslar</a>
-            <a href="#paketler">💎 Üyelik</a>
+            <a href="#" onclick="scrollToSection('icerik')">📝 İçerik Üret</a>
+            <a href="#" onclick="scrollToSection('ekitap')">📚 E-Kitap</a>
+            <a href="#" onclick="scrollToSection('veritabani')">📚 Veritabanlı AI</a>
+            <a href="#" onclick="scrollToSection('referanslar')">⭐ Referanslar</a>
+            <a href="#" onclick="scrollToSection('paketler')">💎 Üyelik</a>
             <a href="#" id="showAdminBtn">🔐 Yönetim</a>
         </div>
         <a href="https://wa.me/905418660202" target="_blank" class="whatsapp-nav"><i class="fab fa-whatsapp"></i> 0541 866 02 02</a>
     </div>
 
-    <!-- Profil & Proje Bilgileri -->
-<!-- Gemini API Ayarları Kartı -->
-<div class="card">
-    <h3 style="color:#d4af37;">🔑 Gemini API Ayarları</h3>
-    <div style="background: #07152e; border-radius: 16px; padding: 15px;">
-        <p style="font-size:0.85rem;">🔑 <strong>Gemini API Anahtarınızı girin</strong> (Google AI Studio'dan ücretsiz alın)</p>
-        <input type="password" id="geminiApiKey" placeholder="AIzaSy..." style="width:100%; padding: 10px; border-radius: 16px; background: #07152e; border: 1px solid #2a456b; color: #d4af37;">
-        <button onclick="saveApiKey()" style="margin-top: 10px; background: #d4af37; color: #0a1a3a; padding: 10px; border-radius: 40px; width: 100%;">💾 API Anahtarını Kaydet</button>
-        <p style="font-size:0.7rem; margin-top:8px;">⚠️ Anahtarınız tarayıcınızda saklanır. Asla paylaşmayın.</p>
+    <!-- Gemini API Ayarları Kartı -->
+    <div class="card" id="apiSettingsCard">
+        <h3>🔑 Gemini API Ayarları</h3>
+        <div class="api-settings">
+            <p style="font-size:0.85rem;">🔑 <strong>Gemini API Anahtarınızı girin</strong> (Google AI Studio'dan ücretsiz alın)</p>
+            <input type="password" id="geminiApiKey" placeholder="AIzaSy..." style="width:100%;">
+            <button onclick="saveApiKey()">💾 API Anahtarını Kaydet</button>
+            <p style="font-size:0.7rem; margin-top:8px;">⚠️ Anahtarınız tarayıcınızda saklanır. Asla paylaşmayın.</p>
+        </div>
     </div>
-</div>
 
-<script>
-// API Anahtarı Kaydetme ve Gemini Çağrısı
-let geminiApiKey = localStorage.getItem("geminiApiKey") || "";
-
-function saveApiKey() {
-    geminiApiKey = document.getElementById("geminiApiKey").value.trim();
-    localStorage.setItem("geminiApiKey", geminiApiKey);
-    alert("API anahtarı kaydedildi!");
-}
-
-async function callGeminiAPI(prompt) {
-    if(!geminiApiKey) return null;
-    try {
-        const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${geminiApiKey}`, {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({
-                contents: [{ parts: [{ text: prompt }] }],
-                generationConfig: { temperature: 0.7, maxOutputTokens: 2000 }
-            })
-        });
-        const data = await response.json();
-        if(data.error) throw new Error(data.error.message);
-        return data.candidates[0].content.parts[0].text;
-    } catch(e) {
-        console.error("Gemini API Hatası:", e);
-        return null;
-    }
-}
-
-// Sayfa yüklendiğinde API anahtarını inputa yükle
-if(document.getElementById("geminiApiKey")) {
-    document.getElementById("geminiApiKey").value = geminiApiKey;
-}
-</script>
+    <!-- Profil & Proje Bilgileri -->
     <div class="card">
         <h2><i class="fas fa-user"></i> Profil & Proje Bilgileri</h2>
         <div class="grid-2">
@@ -338,17 +304,6 @@ if(document.getElementById("geminiApiKey")) {
         <div id="profileStatus" class="output-box" style="margin-top:10px;"></div>
     </div>
 
-    <!-- API Ayarları (Sadece Pro/Premium/Elite görür) -->
-    <div class="card" id="apiSettingsCard">
-        <h2><i class="fas fa-key"></i> Gemini API Ayarları</h2>
-        <div class="api-settings">
-            <p style="font-size:0.8rem;">🔑 <strong>Gemini API Anahtarınızı girin</strong> (Google AI Studio'dan alın)</p>
-            <input type="password" id="geminiApiKey" placeholder="AIzaSy..." style="width:100%;">
-            <button onclick="saveApiKey()">💾 API Anahtarını Kaydet</button>
-            <p style="font-size:0.7rem; margin-top:8px;">⚠️ Anahtarınız tarayıcınızda saklanır. Güvenlik için asla paylaşmayın.</p>
-        </div>
-    </div>
-
     <!-- NE ÜRETMEK İSTERSİN? -->
     <div class="card">
         <h2><i class="fas fa-question-circle"></i> Ne üretmek istersin?</h2>
@@ -362,7 +317,7 @@ if(document.getElementById("geminiApiKey")) {
             <div class="icon-card"><i class="fas fa-language"></i><span>Çeviri</span></div>
             <div class="icon-card"><i class="fas fa-podcast"></i><span>Podcast Senaryosu</span></div>
         </div>
-        <div class="free-upgrade" id="freeUpgradeMsg">
+        <div id="freeUpgradeMsg" class="free-upgrade">
             🚀 <strong>Pro/Premium/Elite üyelere özel!</strong> Sınırsız içerik üretimi, 100 sayfa e-kitap ve tüm AI modelleri için hemen WhatsApp'tan bilgi alın!
         </div>
     </div>
@@ -382,12 +337,11 @@ if(document.getElementById("geminiApiKey")) {
                     <div class="ai-selector">
                         <label>🤖 Yapay Zeka Modeli Seç</label>
                         <select id="aiModel">
-                            <option value="Gemini">✨ Google Gemini (Aktif)</option>
+                            <option value="Gemini 2.0 Flash">✨ Google Gemini 2.0 Flash (Aktif)</option>
                             <option value="Claude">Claude (Demo)</option>
                             <option value="Deepseek">Deepseek (Demo)</option>
                             <option value="ChatGPT">ChatGPT (Demo)</option>
                             <option value="Grok">Grok (Demo)</option>
-                            <option value="Perplexity">Perplexity (Demo)</option>
                         </select>
                     </div>
                     <label>İçerik Türü</label>
@@ -407,7 +361,7 @@ if(document.getElementById("geminiApiKey")) {
                         <option value="Hikaye/Kurgu">📖 Hikaye / Kurgu</option>
                         <option value="Podcast">🎙️ Podcast Senaryosu</option>
                     </select>
-                    <label>Konu / Anahtar Kelime</label>
+                    <label>Konu / Anahtar Kelime <span class="required-field">*</span></label>
                     <input type="text" id="topic" placeholder="Örn: Finansal Özgürlük, Yapay Zeka, Liderlik">
                     <label>Ek Notlar</label>
                     <textarea id="notes" rows="2" placeholder="Hedef kitle, ton, özel istekler..."></textarea>
@@ -533,7 +487,7 @@ if(document.getElementById("geminiApiKey")) {
             <div><i class="fab fa-whatsapp"></i> <a href="https://wa.me/905418660202">0541 866 02 02</a></div>
             <div><i class="fas fa-envelope"></i> <a href="mailto:orhanboyraz0216@gmail.com">orhanboyraz0216@gmail.com</a></div>
             <div><i class="fas fa-map-marker-alt"></i> Nilüfer / BURSA</div>
-            <div><i class="fas fa-globe"></i> <a href="https://anadolunetwork.tr" target="_blank">anadolunetwork.tr</a></div>
+            <div><i class="fas fa-globe"></i> <a href="#">anadolunetwork.tr</a></div>
         </div>
         <div style="margin-top: 15px; font-size: 0.7rem;">© 2025 Anadolu Network | Gemini AI Entegre | Proje Bazlı İçerik Üretim Merkezi</div>
     </footer>
@@ -542,12 +496,11 @@ if(document.getElementById("geminiApiKey")) {
 <script>
     // ============ GEMINI API ENTEGRASYONU ============
     let geminiApiKey = localStorage.getItem("geminiApiKey") || "";
-    if(geminiApiKey) document.getElementById("geminiApiKey").value = geminiApiKey;
     
     function saveApiKey() {
         geminiApiKey = document.getElementById("geminiApiKey").value.trim();
         localStorage.setItem("geminiApiKey", geminiApiKey);
-        alert("API anahtarı kaydedildi!");
+        alert("✅ API anahtarı kaydedildi!");
     }
     
     async function callGeminiAPI(prompt) {
@@ -570,13 +523,17 @@ if(document.getElementById("geminiApiKey")) {
         }
     }
     
-    // ============ Profil ve Proje Bilgileri ============
+    // Sayfa yüklendiğinde API anahtarını inputa yükle
+    if(document.getElementById("geminiApiKey")) {
+        document.getElementById("geminiApiKey").value = geminiApiKey;
+    }
+    
+    // ============ PROFİL VE PROJE ============
     let currentMembership = localStorage.getItem("userMembership") || "Free";
     let userName = localStorage.getItem("userName") || "";
     let userEmail = localStorage.getItem("userEmail") || "";
     let projectName = localStorage.getItem("projectName") || "";
     let projectNumber = localStorage.getItem("projectNumber") || "";
-    let contentCount = parseInt(localStorage.getItem("totalContentCount") || "0");
     let lastGeneratedContent = "";
     let currentEbookContent = "";
     let knowledgeBase = JSON.parse(localStorage.getItem("knowledgeBase") || "[]");
@@ -588,12 +545,8 @@ if(document.getElementById("geminiApiKey")) {
         projectName = document.getElementById("projectName").value.trim();
         projectNumber = document.getElementById("projectNumber").value.trim();
         
-        if(!userName) { alert("Lütfen adınızı girin!"); return; }
-        if(!userEmail) { alert("Lütfen e-posta adresinizi girin!"); return; }
-        if(!projectName && currentMembership !== "Free") { 
-            alert("Pro/Premium/Elite kullanıcılar için Proje Adı zorunludur!"); 
-            return;
-        }
+        if(!userName) { alert("❌ Lütfen adınızı girin!"); return; }
+        if(!userEmail) { alert("❌ Lütfen e-posta adresinizi girin!"); return; }
         
         localStorage.setItem("userName", userName);
         localStorage.setItem("userEmail", userEmail);
@@ -601,12 +554,12 @@ if(document.getElementById("geminiApiKey")) {
         localStorage.setItem("projectNumber", projectNumber);
         
         document.getElementById("profileStatus").innerHTML = `✅ Profil kaydedildi!<br>👤 ${userName}<br>📧 ${userEmail}<br>📁 ${projectName || "Belirtilmemiş"}<br>🔢 ${projectNumber || "Belirtilmemiş"}`;
-        logAction(`Profil kaydedildi: ${userName} - ${projectName}`);
+        logAction(`Profil kaydedildi: ${userName} - ${projectName || "Proje yok"}`);
     }
     
     function updateMembership() {
         if(!userName || !userEmail) {
-            alert("Lütfen önce profilinizi kaydedin!");
+            alert("❌ Lütfen önce profilinizi kaydedin!");
             return;
         }
         let newPlan = prompt("Abonelik planı seçin:\nFree / Pro / Premium / Elite VIP", currentMembership);
@@ -627,6 +580,7 @@ if(document.getElementById("geminiApiKey")) {
         const generateBtn = document.getElementById("generateBtn");
         const ebookBtn = document.getElementById("ebookBtn");
         const apiCard = document.getElementById("apiSettingsCard");
+        const freeMsg = document.getElementById("freeUpgradeMsg");
         
         if(isFree) {
             if(blocker) blocker.style.display = "block";
@@ -634,20 +588,20 @@ if(document.getElementById("geminiApiKey")) {
             if(generateBtn) generateBtn.disabled = true;
             if(ebookBtn) ebookBtn.disabled = true;
             if(apiCard) apiCard.style.display = "none";
-            document.getElementById("freeUpgradeMsg").innerHTML = "🔒 <strong>Ücretsiz kullanıcılar içerik üretemez!</strong> Sınırsız içerik üretimi, 100 sayfa e-kitap ve Gemini AI için hemen WhatsApp'tan bilgi alın!<br><a href='https://wa.me/905418660202?text=Merhaba,%20içerik%20üretim%20paketi%20satın%20almak%20istiyorum.' target='_blank' style='color:white; background:#25D366; display:inline-block; padding:8px 20px; border-radius:40px; margin-top:10px; text-decoration:none;'>📲 WhatsApp'tan Bilgi Al</a>";
+            if(freeMsg) freeMsg.innerHTML = "🔒 <strong>Ücretsiz kullanıcılar içerik üretemez!</strong> Sınırsız içerik üretimi, 100 sayfa e-kitap ve Gemini AI için hemen WhatsApp'tan bilgi alın!<br><a href='https://wa.me/905418660202?text=Merhaba,%20içerik%20üretim%20paketi%20satın%20almak%20istiyorum.' target='_blank' style='color:white; background:#25D366; display:inline-block; padding:8px 20px; border-radius:40px; margin-top:10px; text-decoration:none;'>📲 WhatsApp'tan Bilgi Al</a>";
         } else {
             if(blocker) blocker.style.display = "none";
             if(contentArea) contentArea.style.display = "block";
             if(generateBtn) generateBtn.disabled = false;
             if(ebookBtn) ebookBtn.disabled = false;
             if(apiCard) apiCard.style.display = "block";
-            document.getElementById("freeUpgradeMsg").innerHTML = "🚀 <strong>Pro/Premium/Elite üyelere özel!</strong> Sınırsız içerik üretimi, 100 sayfa e-kitap ve Gemini AI aktif!";
+            if(freeMsg) freeMsg.innerHTML = "🚀 <strong>Pro/Premium/Elite üyelere özel!</strong> Sınırsız içerik üretimi, 100 sayfa e-kitap ve Gemini AI aktif!";
         }
     }
     
     function logAction(action) {
         let logs = JSON.parse(localStorage.getItem("anadolu_content_logs") || "[]");
-        logs.push({ 
+        logs.unshift({ 
             date: new Date().toLocaleString(), 
             action: action, 
             user: userName || "Misafir", 
@@ -656,6 +610,7 @@ if(document.getElementById("geminiApiKey")) {
             projectNo: projectNumber || "Belirtilmemiş",
             plan: currentMembership 
         });
+        if(logs.length > 50) logs.pop();
         localStorage.setItem("anadolu_content_logs", JSON.stringify(logs));
         updateContentCount();
     }
@@ -663,21 +618,19 @@ if(document.getElementById("geminiApiKey")) {
     function updateContentCount() {
         let logs = JSON.parse(localStorage.getItem("anadolu_content_logs") || "[]");
         let contentLogs = logs.filter(l => l.action.includes("İçerik üretildi"));
-        contentCount = contentLogs.length;
-        localStorage.setItem("totalContentCount", contentCount);
-        document.getElementById("totalContent").innerText = contentCount;
+        document.getElementById("totalContent").innerText = contentLogs.length;
     }
     
     // Demo içerik üretici (API yoksa yedek)
-    function generateDemoContent(aiModel, contentType, styleType, topic, notes) {
+    function generateDemoContent(contentType, styleType, topic, notes) {
         if(styleType === "Motivasyon") {
             return `🔥 MOTİVASYON İÇERİĞİ:\n\n${topic} yolculuğunda bugün bir adım öne geçme zamanı! Hayallerinize ulaşmak için harekete geçin. Başarı, küçük adımlarla başlar. 💪\n\n"${topic} konusunda uzmanlaşmak için bugün ilk adımı atın!"`;
         } else if(styleType === "Akademik") {
-            return `📚 AKADEMİK İÇERİK:\n\nGiriş: ${topic} günümüzde kritik öneme sahiptir. Yapılan araştırmalar (2024) ${topic} alanında yıllık %15 büyüme olduğunu göstermektedir.`;
+            return `📚 AKADEMİK İÇERİK:\n\nGiriş: ${topic} günümüzde kritik öneme sahiptir. Yapılan araştırmalar (2024) ${topic} alanında yıllık %15 büyüme olduğunu göstermektedir.\n\nBu çalışmada ${topic} konusu detaylı olarak incelenmiştir.`;
         } else if(styleType === "Hikaye/Kurgu") {
-            return `📖 HİKAYE:\n\nBir zamanlar ${topic} konusunda kararsız kalmış bir genç vardı: Elif. Bir gün yaşlı bir bilge ona şöyle dedi: "${topic} aslında senin içindeki cesaretle başlar."`;
+            return `📖 HİKAYE:\n\nBir zamanlar ${topic} konusunda kararsız kalmış bir genç vardı: Elif. Bir gün yaşlı bir bilge ona şöyle dedi: "${topic} aslında senin içindeki cesaretle başlar."\n\nO günden sonra Elif'in hayatı değişti.`;
         } else {
-            return `🎙️ PODCAST SENARYOSU:\n\nBölüm: ${topic}\n\nSunucu: “Bugünkü konumuz ${topic}.”\n\nUzman: “${topic} aslında çok katmanlı bir kavram.”`;
+            return `🎙️ PODCAST SENARYOSU:\n\nBölüm: ${topic}\n\nSunucu: “Bugünkü konumuz ${topic}.”\n\nUzman: “${topic} aslında çok katmanlı bir kavram. Gelin birlikte inceleyelim.”\n\nSunucu: “Harika, başlayalım!”`;
         }
     }
     
@@ -700,7 +653,8 @@ if(document.getElementById("geminiApiKey")) {
         const styleType = document.getElementById("styleType").value;
         const topic = document.getElementById("topic").value.trim();
         const notes = document.getElementById("notes").value.trim();
-        if(!topic) { alert("Lütfen bir konu girin!"); return; }
+        
+        if(!topic) { alert("❌ Lütfen bir konu girin!"); return; }
         
         document.getElementById("output").innerHTML = "<i class='fas fa-spinner fa-pulse'></i> Gemini AI içerik üretiyor, lütfen bekleyin...";
         
@@ -712,13 +666,13 @@ Anlatım Stili: ${styleType}
 Konu: ${topic}
 Ek Notlar: ${notes || "Yok"}
 
-Lütfen Türkçe, akıcı ve değerli bir içerik üret. Hedef kitleye uygun olsun.`;
+Lütfen Türkçe, akıcı ve değerli bir içerik üret. Hedef kitleye uygun olsun. En az 300 kelime olsun.`;
         
         let result = await callGeminiAPI(prompt);
         
         if(!result) {
-            result = `⚠️ Gemini API anahtarı geçersiz veya eksik. Lütfen yukarıdan API anahtarınızı girin.\n\nDemo içerik üretiliyor...\n\n`;
-            result += generateDemoContent(aiModel, contentType, styleType, topic, notes);
+            result = `⚠️ Gemini API anahtarı geçersiz veya eksik. Lütfen yukarıdan API anahtarınızı girin.\n\n📌 Demo içerik üretiliyor...\n\n`;
+            result += generateDemoContent(contentType, styleType, topic, notes);
         }
         
         const finalContent = `🏷️ **Proje:** ${projectName}${projectNumber ? " ("+projectNumber+")" : ""}\n🤖 **AI Model:** ${aiModel}\n📌 **Tür:** ${contentType} | 🎭 **Stil:** ${styleType}\n📢 **Konu:** ${topic}\n📝 **Notlar:** ${notes || "—"}\n\n---\n\n${result}`;
@@ -726,6 +680,7 @@ Lütfen Türkçe, akıcı ve değerli bir içerik üret. Hedef kitleye uygun ols
         lastGeneratedContent = finalContent;
         document.getElementById("output").innerHTML = finalContent.replace(/\n/g, '<br>');
         logAction(`İçerik üretildi: ${aiModel} - ${contentType} - ${styleType} - ${topic} (Proje: ${projectName})`);
+        alert("✅ İçerik başarıyla oluşturuldu!");
     }
     
     // E-Kitap Üretimi
@@ -739,7 +694,7 @@ Lütfen Türkçe, akıcı ve değerli bir içerik üret. Hedef kitleye uygun ols
         const title = document.getElementById("ebookTitle").value || "Yapay Zeka ile Dijital Dönüşüm";
         const author = document.getElementById("ebookAuthor").value || "Anadolu Network";
         const topic = document.getElementById("ebookTopic").value || "Yapay Zeka ve Gelecek";
-        const pageCount = (currentMembership === "Free") ? 5 : 100;
+        const pageCount = (currentMembership === "Pro") ? 100 : 100;
         
         document.getElementById("ebookProgress").classList.remove("hidden");
         let ebookContent = `# ${title}\n### Yazar: ${author}\n### Proje: ${projectName || "Belirtilmemiş"}\n### Konu: ${topic}\n\n---\n\n`;
@@ -750,15 +705,15 @@ Lütfen Türkçe, akıcı ve değerli bir içerik üret. Hedef kitleye uygun ols
             document.getElementById("progressText").innerHTML = `${i}/${pageCount} sayfa üretiliyor...`;
             
             ebookContent += `## Sayfa ${i}\n\n`;
-            ebookContent += `Bu sayfada ${topic} konusunun ${i}. bölümü ele alınmaktadır. `;
+            ebookContent += `Bu sayfada **${topic}** konusunun ${i}. bölümü ele alınmaktadır. `;
             ebookContent += `Yapay zeka teknolojileri günümüzde hızla gelişmekte ve hayatımızın her alanına entegre olmaktadır.\n\n`;
             ebookContent += `**Bölüm ${i} Özeti:** Bu bölümde ${topic} alanındaki en güncel gelişmeler incelenmiştir.\n\n`;
             ebookContent += `---\n\n`;
             
-            await new Promise(resolve => setTimeout(resolve, 10));
+            await new Promise(resolve => setTimeout(resolve, 5));
         }
         
-        ebookContent += `\n\n## Sonuç\n\nBu kitap ${topic} konusunda ${pageCount} sayfalık kapsamlı bir rehber sunmaktadır.\n\n`;
+        ebookContent += `\n\n## Sonuç\n\nBu kitap **${topic}** konusunda ${pageCount} sayfalık kapsamlı bir rehber sunmaktadır.\n\n`;
         ebookContent += `© 2025 ${author} - Tüm hakları saklıdır.\n`;
         
         currentEbookContent = ebookContent;
@@ -766,40 +721,106 @@ Lütfen Türkçe, akıcı ve değerli bir içerik üret. Hedef kitleye uygun ols
         document.getElementById("progressText").innerHTML = pageCount + "/" + pageCount + " sayfa tamamlandı!";
         setTimeout(() => document.getElementById("ebookProgress").classList.add("hidden"), 2000);
         logAction(`${pageCount} sayfalık e-kitap üretildi: ${title} (Proje: ${projectName})`);
-        alert(`${pageCount} sayfalık e-kitap başarıyla oluşturuldu!`);
+        alert(`✅ ${pageCount} sayfalık e-kitap başarıyla oluşturuldu!`);
     }
     
     // Dışa aktarma fonksiyonları
-    function copyToClipboard() { if(lastGeneratedContent) { navigator.clipboard.writeText(lastGeneratedContent); alert("Kopyalandı!"); } else alert("Önce içerik üretin!"); }
-    function downloadAsTxt() { if(lastGeneratedContent) { const blob = new Blob([lastGeneratedContent], {type:"text/plain"}); saveAs(blob, `icerik_${Date.now()}.txt`); } else alert("Önce içerik üretin!"); }
-    function downloadAsDocx() { if(lastGeneratedContent) { const blob = new Blob([`<html><body><pre>${lastGeneratedContent}</pre></body></html>`], {type:"application/msword"}); saveAs(blob, `icerik_${Date.now()}.doc`); } else alert("Önce içerik üretin!"); }
-    async function downloadAsPDF() { if(lastGeneratedContent) { const { jsPDF } = window.jspdf; const doc = new jsPDF(); doc.text(doc.splitTextToSize(lastGeneratedContent, 170), 20, 20); doc.save(`icerik_${Date.now()}.pdf`); } else alert("Önce içerik üretin!"); }
-    async function downloadAsPNG() { if(lastGeneratedContent) { const div = document.getElementById("output"); div.style.backgroundColor="#07152e"; div.style.padding="20px"; const canvas = await html2canvas(div); const link = document.createElement("a"); link.download = `icerik_${Date.now()}.png`; link.href = canvas.toDataURL(); link.click(); div.style.backgroundColor=""; div.style.padding=""; } else alert("Önce içerik üretin!"); }
-    async function downloadAsJPG() { if(lastGeneratedContent) { const div = document.getElementById("output"); div.style.backgroundColor="#07152e"; div.style.padding="20px"; const canvas = await html2canvas(div); const link = document.createElement("a"); link.download = `icerik_${Date.now()}.jpg`; link.href = canvas.toDataURL("image/jpeg"); link.click(); div.style.backgroundColor=""; div.style.padding=""; } else alert("Önce içerik üretin!"); }
-    function downloadAsCSV() { if(lastGeneratedContent) { const csv = `"İçerik","${lastGeneratedContent.replace(/"/g, '""')}"`; const blob = new Blob([csv], {type:"text/csv"}); saveAs(blob, `icerik_${Date.now()}.csv`); } else alert("Önce içerik üretin!"); }
-    function downloadEbookAsTXT() { if(currentEbookContent) { const blob = new Blob([currentEbookContent], {type:"text/plain"}); saveAs(blob, `ekitap_${Date.now()}.txt`); } else alert("Önce e-kitap oluşturun!"); }
-    function downloadEbookAsDocx() { if(currentEbookContent) { const blob = new Blob([`<html><body><pre>${currentEbookContent}</pre></body></html>`], {type:"application/msword"}); saveAs(blob, `ekitap_${Date.now()}.doc`); } else alert("Önce e-kitap oluşturun!"); }
-    async function downloadEbookAsPDF() { if(currentEbookContent) { const { jsPDF } = window.jspdf; const doc = new jsPDF(); doc.text(doc.splitTextToSize(currentEbookContent, 170), 20, 20); doc.save(`ekitap_${Date.now()}.pdf`); } else alert("Önce e-kitap oluşturun!"); }
+    function copyToClipboard() { if(lastGeneratedContent) { navigator.clipboard.writeText(lastGeneratedContent); alert("✅ Kopyalandı!"); } else alert("❌ Önce içerik üretin!"); }
+    function downloadAsTxt() { if(lastGeneratedContent) { const blob = new Blob([lastGeneratedContent], {type:"text/plain"}); saveAs(blob, `icerik_${Date.now()}.txt`); } else alert("❌ Önce içerik üretin!"); }
+    function downloadAsDocx() { if(lastGeneratedContent) { const blob = new Blob([`<html><body><pre>${lastGeneratedContent.replace(/</g, '&lt;')}</pre></body></html>`], {type:"application/msword"}); saveAs(blob, `icerik_${Date.now()}.doc`); } else alert("❌ Önce içerik üretin!"); }
+    async function downloadAsPDF() { if(lastGeneratedContent) { const { jsPDF } = window.jspdf; const doc = new jsPDF(); doc.text(lastGeneratedContent.substring(0, 5000), 10, 10); doc.save(`icerik_${Date.now()}.pdf`); } else alert("❌ Önce içerik üretin!"); }
+    async function downloadAsPNG() { if(lastGeneratedContent) { const div = document.getElementById("output"); div.style.backgroundColor="#07152e"; div.style.padding="20px"; const canvas = await html2canvas(div); const link = document.createElement("a"); link.download = `icerik_${Date.now()}.png`; link.href = canvas.toDataURL(); link.click(); div.style.backgroundColor=""; div.style.padding=""; } else alert("❌ Önce içerik üretin!"); }
+    async function downloadAsJPG() { if(lastGeneratedContent) { const div = document.getElementById("output"); div.style.backgroundColor="#07152e"; div.style.padding="20px"; const canvas = await html2canvas(div); const link = document.createElement("a"); link.download = `icerik_${Date.now()}.jpg`; link.href = canvas.toDataURL("image/jpeg"); link.click(); div.style.backgroundColor=""; div.style.padding=""; } else alert("❌ Önce içerik üretin!"); }
+    function downloadAsCSV() { if(lastGeneratedContent) { const csv = `"İçerik","${lastGeneratedContent.replace(/"/g, '""')}"`; const blob = new Blob([csv], {type:"text/csv"}); saveAs(blob, `icerik_${Date.now()}.csv`); } else alert("❌ Önce içerik üretin!"); }
+    function downloadEbookAsTXT() { if(currentEbookContent) { const blob = new Blob([currentEbookContent], {type:"text/plain"}); saveAs(blob, `ekitap_${Date.now()}.txt`); } else alert("❌ Önce e-kitap oluşturun!"); }
+    function downloadEbookAsDocx() { if(currentEbookContent) { const blob = new Blob([`<html><body><pre>${currentEbookContent.replace(/</g, '&lt;')}</pre></body></html>`], {type:"application/msword"}); saveAs(blob, `ekitap_${Date.now()}.doc`); } else alert("❌ Önce e-kitap oluşturun!"); }
+    async function downloadEbookAsPDF() { if(currentEbookContent) { const { jsPDF } = window.jspdf; const doc = new jsPDF(); doc.text(currentEbookContent.substring(0, 5000), 10, 10); doc.save(`ekitap_${Date.now()}.pdf`); } else alert("❌ Önce e-kitap oluşturun!"); }
     
     // Veritabanlı AI
-    function renderKnowledgeList() { const container = document.getElementById("knowledgeList"); if(knowledgeBase.length===0) container.innerHTML="Doküman yok"; else container.innerHTML = knowledgeBase.map((d,i)=>`<div class="knowledge-item"><span>📄 ${d.content.substring(0,50)}...</span><button onclick="deleteDocument(${i})" style="width:auto; padding:4px 10px;">🗑️ Sil</button></div>`).join(''); }
-    function addDocument() { const content = document.getElementById("docContent").value.trim(); if(content) { knowledgeBase.push({content}); localStorage.setItem("knowledgeBase",JSON.stringify(knowledgeBase)); renderKnowledgeList(); document.getElementById("docContent").value=""; alert("Doküman eklendi."); } else alert("İçerik girin!"); }
-    function deleteDocument(i) { knowledgeBase.splice(i,1); localStorage.setItem("knowledgeBase",JSON.stringify(knowledgeBase)); renderKnowledgeList(); }
-    function queryKnowledgeBase() { const q = document.getElementById("queryInput").value.trim(); if(!q) alert("Soru girin!"); else if(knowledgeBase.length===0) document.getElementById("queryResult").innerHTML="Bilgi bankası boş."; else { let r = knowledgeBase.filter(d=>d.content.toLowerCase().includes(q.toLowerCase())); document.getElementById("queryResult").innerHTML = r.length ? `📄 ${r.length} doküman bulundu.\nÖrnek: ${r[0].content.substring(0,300)}...` : `"${q}" ile ilgili bilgi yok.`; } }
-    function clearKnowledgeBase() { if(confirm("Tüm dokümanlar silinecek?")) { knowledgeBase=[]; localStorage.setItem("knowledgeBase","[]"); renderKnowledgeList(); alert("Temizlendi."); } }
+    function renderKnowledgeList() { 
+        const container = document.getElementById("knowledgeList"); 
+        if(knowledgeBase.length===0) container.innerHTML="📭 Henüz doküman yok";
+        else container.innerHTML = knowledgeBase.map((d,i)=>`<div class="knowledge-item"><span>📄 ${d.content.substring(0,50)}...</span><button onclick="deleteDocument(${i})" style="width:auto; padding:4px 10px;">🗑️ Sil</button></div>`).join(''); 
+    }
+    function addDocument() { 
+        const content = document.getElementById("docContent").value.trim(); 
+        if(content) { 
+            knowledgeBase.push({content, date: new Date().toISOString()}); 
+            localStorage.setItem("knowledgeBase",JSON.stringify(knowledgeBase)); 
+            renderKnowledgeList(); 
+            document.getElementById("docContent").value=""; 
+            alert("✅ Doküman eklendi."); 
+            logAction(`Doküman eklendi: ${content.substring(0,50)}...`);
+        } else alert("❌ İçerik girin!"); 
+    }
+    function deleteDocument(i) { knowledgeBase.splice(i,1); localStorage.setItem("knowledgeBase",JSON.stringify(knowledgeBase)); renderKnowledgeList(); alert("✅ Doküman silindi."); }
+    function queryKnowledgeBase() { 
+        const q = document.getElementById("queryInput").value.trim(); 
+        if(!q) alert("❌ Soru girin!"); 
+        else if(knowledgeBase.length===0) document.getElementById("queryResult").innerHTML="📭 Bilgi bankası boş. Lütfen önce doküman ekleyin.";
+        else { 
+            let results = knowledgeBase.filter(d=>d.content.toLowerCase().includes(q.toLowerCase())); 
+            if(results.length) {
+                document.getElementById("queryResult").innerHTML = `🔍 **${results.length} doküman bulundu:**\n\n${results.map(r=>`📄 ${r.content.substring(0,200)}...`).join('\n\n')}`;
+            } else {
+                document.getElementById("queryResult").innerHTML = `"${q}" ile ilgili bilgi bulunamadı.`;
+            }
+        } 
+    }
+    function clearKnowledgeBase() { if(confirm("Tüm dokümanlar silinecek?")) { knowledgeBase=[]; localStorage.setItem("knowledgeBase","[]"); renderKnowledgeList(); alert("✅ Tüm dokümanlar temizlendi."); } }
     
     // Referanslar
-    function renderReferences() { const container = document.getElementById("referencesList"); container.innerHTML = references.map((r,i)=>`<div class="reference-item"><div class="reference-text">"${r.text}"</div><div class="reference-author">— ${r.name}</div><button onclick="deleteReference(${i})" style="width:auto; padding:4px 10px;">🗑️ Sil</button></div>`).join('') || "Henüz referans yok."; }
-    function addReference() { const name = document.getElementById("newRefName").value.trim(); const text = document.getElementById("newRefText").value.trim(); if(name&&text) { references.push({name,text}); localStorage.setItem("references",JSON.stringify(references)); renderReferences(); document.getElementById("newRefName").value=""; document.getElementById("newRefText").value=""; alert("Referans eklendi."); } else alert("İsim ve yorum girin!"); }
-    function deleteReference(i) { references.splice(i,1); localStorage.setItem("references",JSON.stringify(references)); renderReferences(); }
+    function renderReferences() { 
+        const container = document.getElementById("referencesList"); 
+        container.innerHTML = references.map((r,i)=>`<div class="reference-item"><div class="reference-text">"${r.text}"</div><div class="reference-author">— ${r.name}</div><button onclick="deleteReference(${i})" style="width:auto; padding:4px 10px;">🗑️ Sil</button></div>`).join('') || "Henüz referans yok."; 
+    }
+    function addReference() { 
+        const name = document.getElementById("newRefName").value.trim(); 
+        const text = document.getElementById("newRefText").value.trim(); 
+        if(name&&text) { 
+            references.push({name,text}); 
+            localStorage.setItem("references",JSON.stringify(references)); 
+            renderReferences(); 
+            document.getElementById("newRefName").value=""; 
+            document.getElementById("newRefText").value=""; 
+            alert("✅ Referans eklendi."); 
+            logAction(`Referans eklendi: ${name}`);
+        } else alert("❌ İsim ve yorum girin!"); 
+    }
+    function deleteReference(i) { references.splice(i,1); localStorage.setItem("references",JSON.stringify(references)); renderReferences(); alert("✅ Referans silindi."); }
     
     // Yönetim Paneli
-    function checkAdmin() { if(document.getElementById("adminPass").value==="admin2026") { document.getElementById("adminContent").classList.remove("hidden"); loadAdminLogs(); } else alert("Şifre hatalı!"); }
-    function loadAdminLogs() { let logs = JSON.parse(localStorage.getItem("anadolu_content_logs")||"[]"); document.getElementById("adminLogs").innerHTML = logs.length ? "<ul>"+logs.slice(-15).reverse().map(l=>`<li>${l.date} - ${l.user} (${l.plan})<br>📁 ${l.project} | 📧 ${l.email}<br>📝 ${l.action}</li>`).join('')+"</ul>" : "Log yok"; }
-    function exportLogsAsCSV() { let logs = JSON.parse(localStorage.getItem("anadolu_content_logs")||"[]"); let csv = "Tarih,Kullanıcı,E-posta,Proje,ProjeNo,Plan,Aksiyon\n"+logs.map(l=>`"${l.date}","${l.user}","${l.email}","${l.project}","${l.projectNo}","${l.plan}","${l.action}"`).join("\n"); const blob = new Blob([csv],{type:"text/csv"}); saveAs(blob,`anadolu_logs_${Date.now()}.csv`); }
-    function clearAllLogs() { if(confirm("Tüm loglar silinecek?")) { localStorage.removeItem("anadolu_content_logs"); loadAdminLogs(); alert("Loglar temizlendi."); } }
+    function checkAdmin() { 
+        if(document.getElementById("adminPass").value==="admin2026") { 
+            document.getElementById("adminContent").classList.remove("hidden"); 
+            loadAdminLogs(); 
+        } else alert("❌ Şifre hatalı!"); 
+    }
+    function loadAdminLogs() { 
+        let logs = JSON.parse(localStorage.getItem("anadolu_content_logs")||"[]"); 
+        document.getElementById("adminLogs").innerHTML = logs.length ? logs.slice(0,20).map(l=>`<div style="border-bottom:1px solid #2a456b; padding:8px;"><small>${l.date}</small><br><strong>${l.user}</strong> (${l.plan})<br>📁 ${l.project}<br>📝 ${l.action}</div>`).join('') : "Log yok"; 
+    }
+    function exportLogsAsCSV() { 
+        let logs = JSON.parse(localStorage.getItem("anadolu_content_logs")||"[]"); 
+        let csv = "Tarih,Kullanıcı,E-posta,Proje,ProjeNo,Plan,Aksiyon\n"+logs.map(l=>`"${l.date}","${l.user}","${l.email}","${l.project}","${l.projectNo}","${l.plan}","${l.action}"`).join("\n"); 
+        const blob = new Blob([csv],{type:"text/csv"}); 
+        saveAs(blob,`anadolu_logs_${Date.now()}.csv`); 
+    }
+    function clearAllLogs() { if(confirm("Tüm loglar silinecek?")) { localStorage.removeItem("anadolu_content_logs"); loadAdminLogs(); alert("✅ Loglar temizlendi."); } }
     
-    document.getElementById("showAdminBtn").addEventListener("click", (e) => { e.preventDefault(); document.getElementById("adminModal").classList.toggle("hidden"); document.getElementById("adminContent").classList.add("hidden"); document.getElementById("adminPass").value = ""; });
+    // Sayfa içi navigasyon
+    function scrollToSection(id) {
+        const element = document.getElementById(id);
+        if(element) element.scrollIntoView({ behavior: 'smooth' });
+    }
+    
+    // Event Listeners
+    document.getElementById("showAdminBtn").addEventListener("click", (e) => { 
+        e.preventDefault(); 
+        document.getElementById("adminModal").classList.toggle("hidden"); 
+        document.getElementById("adminContent").classList.add("hidden"); 
+        document.getElementById("adminPass").value = ""; 
+    });
     
     // Sayfa yükleme
     document.getElementById("membershipStatus").innerHTML = currentMembership;
@@ -807,17 +828,39 @@ Lütfen Türkçe, akıcı ve değerli bir içerik üret. Hedef kitleye uygun ols
     if(userEmail) document.getElementById("userEmail").value = userEmail;
     if(projectName) document.getElementById("projectName").value = projectName;
     if(projectNumber) document.getElementById("projectNumber").value = projectNumber;
-    if(geminiApiKey) document.getElementById("geminiApiKey").value = geminiApiKey;
     
     renderKnowledgeList();
     renderReferences();
     updateFreeBlock();
+    updateContentCount();
     logAction("Sayfa ziyaret edildi");
     
+    // Global fonksiyonları window'a bağla
     window.generateEbook = generateEbook;
     window.generateContentWithAI = generateContentWithAI;
     window.saveApiKey = saveApiKey;
     window.saveProfile = saveProfile;
+    window.updateMembership = updateMembership;
+    window.copyToClipboard = copyToClipboard;
+    window.downloadAsTxt = downloadAsTxt;
+    window.downloadAsDocx = downloadAsDocx;
+    window.downloadAsPDF = downloadAsPDF;
+    window.downloadAsPNG = downloadAsPNG;
+    window.downloadAsJPG = downloadAsJPG;
+    window.downloadAsCSV = downloadAsCSV;
+    window.downloadEbookAsTXT = downloadEbookAsTXT;
+    window.downloadEbookAsDocx = downloadEbookAsDocx;
+    window.downloadEbookAsPDF = downloadEbookAsPDF;
+    window.addDocument = addDocument;
+    window.queryKnowledgeBase = queryKnowledgeBase;
+    window.clearKnowledgeBase = clearKnowledgeBase;
+    window.addReference = addReference;
+    window.deleteReference = deleteReference;
+    window.checkAdmin = checkAdmin;
+    window.exportLogsAsCSV = exportLogsAsCSV;
+    window.clearAllLogs = clearAllLogs;
+    window.scrollToSection = scrollToSection;
+    window.deleteDocument = deleteDocument;
 </script>
 </body>
 </html>
