@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>Anadolu Network | 9+ AI İçerik Üretim Merkezi</title>
+    <title>Anadolu Network | AI İçerik Üretim Merkezi</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
@@ -268,14 +268,15 @@
         <a href="https://wa.me/905418660202" target="_blank" class="whatsapp-nav"><i class="fab fa-whatsapp"></i> 0541 866 02 02</a>
     </div>
 
-    <!-- Gemini API Ayarları Kartı -->
+    <!-- TEK API AYARLARI KARTI -->
     <div class="card" id="apiSettingsCard">
-        <h3>🔑 Gemini API Ayarları</h3>
+        <h2><i class="fas fa-key"></i> Gemini API Ayarları</h2>
         <div class="api-settings">
             <p style="font-size:0.85rem;">🔑 <strong>Gemini API Anahtarınızı girin</strong> (Google AI Studio'dan ücretsiz alın)</p>
             <input type="password" id="geminiApiKey" placeholder="AIzaSy..." style="width:100%;">
             <button onclick="saveApiKey()">💾 API Anahtarını Kaydet</button>
             <p style="font-size:0.7rem; margin-top:8px;">⚠️ Anahtarınız tarayıcınızda saklanır. Asla paylaşmayın.</p>
+            <p style="font-size:0.7rem; margin-top:5px;">📌 <a href="https://aistudio.google.com" target="_blank" style="color:#d4af37;">Google AI Studio</a>'dan ücretsiz API anahtarı alabilirsiniz.</p>
         </div>
     </div>
 
@@ -383,7 +384,7 @@
                         <li><strong>Google Gemini 2.0 Flash:</strong> Hızlı, ücretsiz (dakikada 60 istek)</li>
                         <li><strong>Çok dilli destek:</strong> Türkçe dahil 100+ dil</li>
                         <li><strong>Yüksek kalite:</strong> Yaratıcı, doğru ve akıcı içerik</li>
-                        <li><strong>API anahtarı:</strong> <a href="https://aistudio.google.com" target="_blank" style="color:#d4af37;">Google AI Studio</a>'dan alınır</li>
+                        <li><strong>API anahtarı:</strong> Yukarıdaki karttan girin</li>
                     </ul>
                     <div class="output-box" style="margin-top: 20px;">
                         💡 <strong>Pro İpucu:</strong> API anahtarınızı yukarıdan girin. Anahtar yoksa demo modda çalışır.
@@ -494,7 +495,7 @@
 </div>
 
 <script>
-    // ============ GEMINI API ENTEGRASYONU ============
+    // ============ TEK API ANAHTARI ============
     let geminiApiKey = localStorage.getItem("geminiApiKey") || "";
     
     function saveApiKey() {
@@ -579,7 +580,6 @@
         const contentArea = document.getElementById("contentArea");
         const generateBtn = document.getElementById("generateBtn");
         const ebookBtn = document.getElementById("ebookBtn");
-        const apiCard = document.getElementById("apiSettingsCard");
         const freeMsg = document.getElementById("freeUpgradeMsg");
         
         if(isFree) {
@@ -587,14 +587,12 @@
             if(contentArea) contentArea.style.display = "none";
             if(generateBtn) generateBtn.disabled = true;
             if(ebookBtn) ebookBtn.disabled = true;
-            if(apiCard) apiCard.style.display = "none";
             if(freeMsg) freeMsg.innerHTML = "🔒 <strong>Ücretsiz kullanıcılar içerik üretemez!</strong> Sınırsız içerik üretimi, 100 sayfa e-kitap ve Gemini AI için hemen WhatsApp'tan bilgi alın!<br><a href='https://wa.me/905418660202?text=Merhaba,%20içerik%20üretim%20paketi%20satın%20almak%20istiyorum.' target='_blank' style='color:white; background:#25D366; display:inline-block; padding:8px 20px; border-radius:40px; margin-top:10px; text-decoration:none;'>📲 WhatsApp'tan Bilgi Al</a>";
         } else {
             if(blocker) blocker.style.display = "none";
             if(contentArea) contentArea.style.display = "block";
             if(generateBtn) generateBtn.disabled = false;
             if(ebookBtn) ebookBtn.disabled = false;
-            if(apiCard) apiCard.style.display = "block";
             if(freeMsg) freeMsg.innerHTML = "🚀 <strong>Pro/Premium/Elite üyelere özel!</strong> Sınırsız içerik üretimi, 100 sayfa e-kitap ve Gemini AI aktif!";
         }
     }
@@ -621,7 +619,7 @@
         document.getElementById("totalContent").innerText = contentLogs.length;
     }
     
-    // Demo içerik üretici (API yoksa yedek)
+    // Demo içerik üretici
     function generateDemoContent(contentType, styleType, topic, notes) {
         if(styleType === "Motivasyon") {
             return `🔥 MOTİVASYON İÇERİĞİ:\n\n${topic} yolculuğunda bugün bir adım öne geçme zamanı! Hayallerinize ulaşmak için harekete geçin. Başarı, küçük adımlarla başlar. 💪\n\n"${topic} konusunda uzmanlaşmak için bugün ilk adımı atın!"`;
@@ -634,7 +632,7 @@
         }
     }
     
-    // Ana içerik üretme fonksiyonu
+    // Ana içerik üretme
     async function generateContentWithAI() {
         if(currentMembership === "Free") {
             alert("❌ Ücretsiz kullanıcılar içerik üretemez! Lütfen bir paket satın alın.");
@@ -694,7 +692,7 @@ Lütfen Türkçe, akıcı ve değerli bir içerik üret. Hedef kitleye uygun ols
         const title = document.getElementById("ebookTitle").value || "Yapay Zeka ile Dijital Dönüşüm";
         const author = document.getElementById("ebookAuthor").value || "Anadolu Network";
         const topic = document.getElementById("ebookTopic").value || "Yapay Zeka ve Gelecek";
-        const pageCount = (currentMembership === "Pro") ? 100 : 100;
+        const pageCount = 100;
         
         document.getElementById("ebookProgress").classList.remove("hidden");
         let ebookContent = `# ${title}\n### Yazar: ${author}\n### Proje: ${projectName || "Belirtilmemiş"}\n### Konu: ${topic}\n\n---\n\n`;
@@ -835,7 +833,7 @@ Lütfen Türkçe, akıcı ve değerli bir içerik üret. Hedef kitleye uygun ols
     updateContentCount();
     logAction("Sayfa ziyaret edildi");
     
-    // Global fonksiyonları window'a bağla
+    // Global fonksiyonlar
     window.generateEbook = generateEbook;
     window.generateContentWithAI = generateContentWithAI;
     window.saveApiKey = saveApiKey;
