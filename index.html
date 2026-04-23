@@ -62,7 +62,7 @@
             gap: 8px;
             text-decoration: none;
         }
-        .container { max-width: 1400px; margin: 0 auto; padding: 0 20px; }
+        .container { max-width: 800px; margin: 0 auto; padding: 0 20px; }
         .card {
             background: #0f2a4a;
             border-radius: 28px;
@@ -74,7 +74,7 @@
         .card:hover { border-color: #d4af37; }
         h2 { color: #d4af37; margin-bottom: 20px; font-size: 1.4rem; border-left: 4px solid #d4af37; padding-left: 15px; }
         h3 { color: #d4af37; margin: 15px 0 10px 0; }
-        .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; }
+        .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
         select, textarea, input {
             width: 100%;
             padding: 12px;
@@ -91,37 +91,37 @@
             font-weight: bold;
             border: none;
             border-radius: 40px;
-            padding: 12px;
+            padding: 14px;
             width: 100%;
             cursor: pointer;
             transition: 0.2s;
             margin-top: 10px;
-            font-size: 0.9rem;
+            font-size: 1rem;
         }
         button:hover { background: #b8962e; transform: scale(1.01); }
         .output-box {
             background: #07152e80;
             border-left: 4px solid #d4af37;
             border-radius: 16px;
-            padding: 15px;
-            margin-top: 15px;
+            padding: 20px;
+            margin-top: 20px;
             font-size: 0.9rem;
             white-space: pre-wrap;
-            max-height: 400px;
+            max-height: 500px;
             overflow-y: auto;
         }
         .export-buttons {
             display: flex;
             flex-wrap: wrap;
-            gap: 8px;
-            margin-top: 15px;
+            gap: 10px;
+            margin-top: 20px;
         }
         .export-buttons button {
             flex: 1;
             margin-top: 0;
-            font-size: 0.7rem;
-            padding: 8px;
-            min-width: 65px;
+            font-size: 0.75rem;
+            padding: 10px;
+            min-width: 70px;
         }
         .packages { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; }
         .package-card {
@@ -173,39 +173,6 @@
             font-size: 0.7rem;
             font-weight: bold;
         }
-        .ai-selector {
-            background: #07152e;
-            border-radius: 16px;
-            padding: 10px;
-            margin-bottom: 15px;
-        }
-        .knowledge-item, .reference-item {
-            background: #1e3a5f;
-            border-radius: 12px;
-            padding: 10px;
-            margin: 8px 0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-        .reference-item { flex-direction: column; align-items: flex-start; }
-        .reference-text { font-style: italic; }
-        .reference-author { color: #d4af37; font-weight: bold; }
-        .ebook-progress { margin: 10px 0; }
-        .progress-bar {
-            background: #2a456b;
-            border-radius: 10px;
-            height: 8px;
-            overflow: hidden;
-        }
-        .progress-fill {
-            background: #d4af37;
-            width: 0%;
-            height: 100%;
-            transition: width 0.3s;
-        }
         .api-settings {
             background: #07152e;
             border-radius: 16px;
@@ -215,22 +182,22 @@
         .content-icons {
             display: flex;
             flex-wrap: wrap;
-            gap: 15px;
+            gap: 12px;
             justify-content: center;
             margin: 20px 0;
         }
         .icon-card {
             background: #07152e;
             border-radius: 20px;
-            padding: 15px;
+            padding: 12px;
             text-align: center;
-            min-width: 100px;
+            min-width: 90px;
             transition: 0.2s;
             border: 1px solid rgba(212, 175, 55, 0.3);
             cursor: pointer;
         }
         .icon-card:hover { transform: translateY(-3px); border-color: #d4af37; background: #1e3a5f; }
-        .icon-card i { font-size: 2rem; color: #d4af37; margin-bottom: 8px; }
+        .icon-card i { font-size: 1.8rem; color: #d4af37; margin-bottom: 8px; }
         .icon-card span { font-size: 0.7rem; display: block; }
         .free-upgrade {
             background: linear-gradient(135deg, #d4af37, #b8860b);
@@ -244,12 +211,13 @@
         .required-field { color: #ff6b6b; font-size: 0.7rem; margin-left: 5px; }
         .style-badge {
             display: inline-block;
-            padding: 4px 10px;
-            border-radius: 20px;
-            font-size: 0.7rem;
+            padding: 8px 16px;
+            border-radius: 40px;
+            font-size: 0.75rem;
             margin: 5px;
             cursor: pointer;
             transition: 0.2s;
+            font-weight: 500;
         }
         .style-badge:hover { transform: scale(1.05); }
         .style-prof { background: #1e3a5f; color: #d4af37; border: 1px solid #d4af37; }
@@ -258,6 +226,12 @@
         .style-inspire { background: #6a1b9a; color: white; }
         .style-tech { background: #1565c0; color: white; }
         .style-academic { background: #c62828; color: white; }
+        .ai-selector {
+            background: #07152e;
+            border-radius: 16px;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
         @media (max-width: 768px) { .navbar { flex-direction: column; text-align: center; } }
     </style>
 </head>
@@ -269,7 +243,7 @@
         <div class="logo-circle"><i class="fas fa-robot"></i></div>
         <div class="brand-text">
             <h1>ANADOLU NETWORK: ODAK DİJİTAL İÇERİK ÜRETİM MERKEZİ</h1>
-            <p>10 Yapay Zeka Modeli | Gemini AI Entegre | Proje Bazlı İçerik Üretim Merkezi</p>
+            <p>Gemini AI Destekli | Proje Bazlı İçerik Üretim Merkezi</p>
         </div>
     </div>
 
@@ -277,16 +251,13 @@
     <div class="navbar">
         <div class="nav-links">
             <a href="#" onclick="scrollToSection('icerik')">📝 İçerik Üret</a>
-            <a href="#" onclick="scrollToSection('ekitap')">📚 E-Kitap</a>
-            <a href="#" onclick="scrollToSection('veritabani')">📚 Veritabanlı AI</a>
-            <a href="#" onclick="scrollToSection('referanslar')">⭐ Referanslar</a>
             <a href="#" onclick="scrollToSection('paketler')">💎 Üyelik</a>
             <a href="#" id="showAdminBtn">🔐 Yönetim</a>
         </div>
         <a href="https://wa.me/905418660202" target="_blank" class="whatsapp-nav"><i class="fab fa-whatsapp"></i> 0541 866 02 02</a>
     </div>
 
-    <!-- TEK API AYARLARI KARTI -->
+    <!-- Gemini API Ayarları -->
     <div class="card" id="apiSettingsCard">
         <h2><i class="fas fa-key"></i> Gemini API Ayarları</h2>
         <div class="api-settings">
@@ -323,12 +294,11 @@
         <div id="profileStatus" class="output-box" style="margin-top:10px;"></div>
     </div>
 
-    <!-- NE ÜRETMEK İSTERSİN? - İKONLAR ÇALIŞIYOR -->
+    <!-- İçerik Türü İkonları -->
     <div class="card">
         <h2><i class="fas fa-question-circle"></i> Ne üretmek istersin?</h2>
         <div class="content-icons">
             <div class="icon-card" onclick="selectContentType('Blog Metni')"><i class="fas fa-file-alt"></i><span>Blog Metni</span></div>
-            <div class="icon-card" onclick="selectContentType('E-Kitap Bölümü')"><i class="fas fa-book"></i><span>E-Kitap</span></div>
             <div class="icon-card" onclick="selectContentType('Video Senaryosu')"><i class="fas fa-video"></i><span>Video Senaryosu</span></div>
             <div class="icon-card" onclick="selectContentType('Sosyal Medya İçeriği')"><i class="fab fa-instagram"></i><span>Sosyal Medya</span></div>
             <div class="icon-card" onclick="selectContentType('SEO/Google Ads')"><i class="fab fa-google"></i><span>SEO/Google Ads</span></div>
@@ -338,7 +308,7 @@
         </div>
     </div>
 
-    <!-- Yazım Stilleri (Tone of Voice) -->
+    <!-- Yazım Stilleri -->
     <div class="card">
         <h2><i class="fas fa-pen-fancy"></i> Yazım Stili Seç</h2>
         <div style="display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin: 10px 0;">
@@ -355,10 +325,10 @@
     </div>
 
     <div id="freeUpgradeMsg" class="free-upgrade">
-        🚀 <strong>Pro/Premium/Elite üyelere özel!</strong> Sınırsız içerik üretimi, 100 sayfa e-kitap ve tüm AI modelleri için hemen WhatsApp'tan bilgi alın!
+        🚀 <strong>Pro/Premium/Elite üyelere özel!</strong> Sınırsız içerik üretimi ve Gemini AI için hemen WhatsApp'tan bilgi alın!
     </div>
 
-    <!-- İçerik Üretim Merkezi -->
+    <!-- TEK İÇERİK ÜRETİM PANELİ -->
     <div class="card" id="icerik">
         <h2><i class="fas fa-brain"></i> Gemini AI ile İçerik Üret</h2>
         <div id="freeBlocker" style="display: none;">
@@ -368,128 +338,57 @@
             </div>
         </div>
         <div id="contentArea">
-            <div class="grid-2">
-                <div>
-                    <div class="ai-selector">
-                        <label>🤖 Yapay Zeka Modeli Seç</label>
-                        <select id="aiModel">
-                            <option value="Gemini 2.0 Flash">✨ Google Gemini 2.0 Flash (Aktif)</option>
-                            <option value="Claude">Claude (Demo)</option>
-                            <option value="Deepseek">Deepseek (Demo)</option>
-                            <option value="ChatGPT">ChatGPT (Demo)</option>
-                            <option value="Grok">Grok (Demo)</option>
-                        </select>
-                    </div>
-                    <label>İçerik Türü</label>
-                    <select id="contentType">
-                        <option value="Blog Metni">📄 Blog Metni / Makale</option>
-                        <option value="E-Kitap Bölümü">📘 E-Kitap Bölümü</option>
-                        <option value="Video Senaryosu">🎥 Video Senaryosu</option>
-                        <option value="Sosyal Medya İçeriği">📱 Sosyal Medya</option>
-                        <option value="SEO/Google Ads">🔍 SEO / Google Ads</option>
-                        <option value="Logo Fikri">🎨 Logo Tasarım Fikri</option>
-                        <option value="Çeviri">🌍 Çeviri (TR↔EN)</option>
-                        <option value="Podcast Senaryosu">🎙️ Podcast Senaryosu</option>
-                    </select>
-                    <label>Yazım Stili</label>
-                    <select id="styleTypeSelect">
-                        <option value="Profesyonel / Kurumsal">🏢 Profesyonel / Kurumsal</option>
-                        <option value="Samimi / Günlük Konuşma">💬 Samimi / Günlük Konuşma</option>
-                        <option value="Eğlenceli / Mizahi">😄 Eğlenceli / Mizahi</option>
-                        <option value="İlham Verici / Motivasyon">✨ İlham Verici / Motivasyon</option>
-                        <option value="Teknik / Detaylı">⚙️ Teknik / Detaylı</option>
-                        <option value="Akademik / Bilimsel">📚 Akademik / Bilimsel</option>
-                    </select>
-                    <label>Konu / Anahtar Kelime <span class="required-field">*</span></label>
-                    <input type="text" id="topic" placeholder="Örn: Finansal Özgürlük, Yapay Zeka, Liderlik">
-                    <label>Ek Notlar</label>
-                    <textarea id="notes" rows="2" placeholder="Hedef kitle, ton, özel istekler..."></textarea>
-                    <button id="generateBtn" onclick="generateContentWithAI()">✨ Gemini AI ile İçerik Oluştur</button>
-                    <div id="output" class="output-box">Gemini AI ile içerik burada üretilecek.</div>
-                    <div class="export-buttons">
-                        <button onclick="copyToClipboard()"><i class="fas fa-copy"></i> Kopyala</button>
-                        <button onclick="downloadAsTxt()"><i class="fas fa-file-alt"></i> TXT</button>
-                        <button onclick="downloadAsDocx()"><i class="fas fa-file-word"></i> Word</button>
-                        <button onclick="downloadAsPDF()"><i class="fas fa-file-pdf"></i> PDF</button>
-                        <button onclick="downloadAsPNG()"><i class="fas fa-image"></i> PNG</button>
-                        <button onclick="downloadAsJPG()"><i class="fas fa-camera"></i> JPG</button>
-                        <button onclick="downloadAsCSV()"><i class="fas fa-file-excel"></i> CSV</button>
-                    </div>
-                </div>
-                <div>
-                    <h3>⚡ Gemini AI Hakkında</h3>
-                    <ul style="margin-left: 20px; line-height: 1.6; font-size: 0.85rem;">
-                        <li><strong>Google Gemini 2.0 Flash:</strong> Hızlı, ücretsiz (dakikada 60 istek)</li>
-                        <li><strong>Çok dilli destek:</strong> Türkçe dahil 100+ dil</li>
-                        <li><strong>Yüksek kalite:</strong> Yaratıcı, doğru ve akıcı içerik</li>
-                        <li><strong>API anahtarı:</strong> Yukarıdaki karttan girin</li>
-                    </ul>
-                    <div class="output-box" style="margin-top: 20px;">
-                        💡 <strong>Pro İpucu:</strong> İkonlara tıklayarak içerik türünü, stillere tıklayarak yazım stilini hızlıca seçebilirsiniz!
-                    </div>
-                </div>
+            <div class="ai-selector">
+                <label>🤖 Yapay Zeka Modeli Seç</label>
+                <select id="aiModel">
+                    <option value="Gemini 2.0 Flash">✨ Google Gemini 2.0 Flash (Aktif)</option>
+                    <option value="Claude">Claude (Demo)</option>
+                    <option value="Deepseek">Deepseek (Demo)</option>
+                    <option value="ChatGPT">ChatGPT (Demo)</option>
+                    <option value="Grok">Grok (Demo)</option>
+                </select>
             </div>
-        </div>
-    </div>
-
-    <!-- E-Kitap Üretme -->
-    <div class="card" id="ekitap">
-        <h2><i class="fas fa-book"></i> E-Kitap Üret</h2>
-        <div class="grid-2">
-            <div>
-                <label>📖 E-Kitap Başlığı</label>
-                <input type="text" id="ebookTitle" placeholder="E-Kitap Başlığı" value="Yapay Zeka ile Dijital Dönüşüm">
-                <label>✍️ Yazar Adı</label>
-                <input type="text" id="ebookAuthor" placeholder="Yazar Adı" value="Anadolu Network">
-                <label>📑 Konu / Ana Tema</label>
-                <input type="text" id="ebookTopic" placeholder="Konu" value="Yapay Zeka ve Gelecek">
-                <button id="ebookBtn" onclick="generateEbook()">📚 E-Kitap Oluştur</button>
-                <div id="ebookProgress" class="ebook-progress hidden">
-                    <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
-                    <p id="progressText" style="font-size:0.8rem; margin-top:5px;">0 sayfa üretiliyor...</p>
-                </div>
+            
+            <label>📝 İçerik Türü</label>
+            <select id="contentType">
+                <option value="Blog Metni">📄 Blog Metni / Makale</option>
+                <option value="Video Senaryosu">🎥 Video Senaryosu</option>
+                <option value="Sosyal Medya İçeriği">📱 Sosyal Medya</option>
+                <option value="SEO/Google Ads">🔍 SEO / Google Ads</option>
+                <option value="Logo Fikri">🎨 Logo Tasarım Fikri</option>
+                <option value="Çeviri">🌍 Çeviri (TR↔EN)</option>
+                <option value="Podcast Senaryosu">🎙️ Podcast Senaryosu</option>
+            </select>
+            
+            <label>✍️ Yazım Stili</label>
+            <select id="styleTypeSelect">
+                <option value="Profesyonel / Kurumsal">🏢 Profesyonel / Kurumsal</option>
+                <option value="Samimi / Günlük Konuşma">💬 Samimi / Günlük Konuşma</option>
+                <option value="Eğlenceli / Mizahi">😄 Eğlenceli / Mizahi</option>
+                <option value="İlham Verici / Motivasyon">✨ İlham Verici / Motivasyon</option>
+                <option value="Teknik / Detaylı">⚙️ Teknik / Detaylı</option>
+                <option value="Akademik / Bilimsel">📚 Akademik / Bilimsel</option>
+            </select>
+            
+            <label>📢 Konu / Anahtar Kelime <span class="required-field">*</span></label>
+            <input type="text" id="topic" placeholder="Örn: Finansal Özgürlük, Yapay Zeka, Liderlik">
+            
+            <label>📝 Ek Notlar</label>
+            <textarea id="notes" rows="3" placeholder="Hedef kitle, ton, özel istekler..."></textarea>
+            
+            <button id="generateBtn" onclick="generateContentWithAI()">✨ Gemini AI ile İçerik Oluştur</button>
+            
+            <div id="output" class="output-box">Gemini AI ile içerik burada üretilecek.</div>
+            
+            <div class="export-buttons">
+                <button onclick="copyToClipboard()"><i class="fas fa-copy"></i> Kopyala</button>
+                <button onclick="downloadAsTxt()"><i class="fas fa-file-alt"></i> TXT</button>
+                <button onclick="downloadAsDocx()"><i class="fas fa-file-word"></i> Word</button>
+                <button onclick="downloadAsPDF()"><i class="fas fa-file-pdf"></i> PDF</button>
+                <button onclick="downloadAsPNG()"><i class="fas fa-image"></i> PNG</button>
+                <button onclick="downloadAsJPG()"><i class="fas fa-camera"></i> JPG</button>
+                <button onclick="downloadAsCSV()"><i class="fas fa-file-excel"></i> CSV</button>
             </div>
-            <div>
-                <div class="output-box" id="ebookPreview" style="max-height: 300px;">
-                    E-Kitap önizlemesi burada görünecek.
-                </div>
-                <div class="export-buttons">
-                    <button onclick="downloadEbookAsTXT()"><i class="fas fa-file-alt"></i> E-Kitap TXT</button>
-                    <button onclick="downloadEbookAsDocx()"><i class="fas fa-file-word"></i> E-Kitap Word</button>
-                    <button onclick="downloadEbookAsPDF()"><i class="fas fa-file-pdf"></i> E-Kitap PDF</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Veritabanlı AI -->
-    <div class="card" id="veritabani">
-        <h2><i class="fas fa-database"></i> Veritabanlı AI (Notebook LM Tarzı)</h2>
-        <div class="grid-2">
-            <div>
-                <label>📁 Bilgi Bankasına Doküman Ekle</label>
-                <textarea id="docContent" rows="3" placeholder="Metin, notlar, makaleler, PDF içeriği..."></textarea>
-                <button onclick="addDocument()">📄 Doküman Ekle</button>
-                <div id="knowledgeList" class="output-box" style="margin-top: 10px; max-height: 200px; overflow-y: auto;"></div>
-            </div>
-            <div>
-                <label>🔍 Bilgi Bankasına Soru Sor</label>
-                <input type="text" id="queryInput" placeholder="Yüklediğiniz dokümanlarla ilgili bir soru sorun">
-                <button onclick="queryKnowledgeBase()">🤖 AI Cevaplasın</button>
-                <div id="queryResult" class="output-box">Burada bilgi bankanızdan yanıt alacaksınız.</div>
-                <button onclick="clearKnowledgeBase()" style="background:#be123c; color:white;">🗑️ Tüm Dokümanları Sil</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Referanslar -->
-    <div class="card" id="referanslar">
-        <h2><i class="fas fa-star"></i> Müşteri Referanslarımız</h2>
-        <div id="referencesList"></div>
-        <div class="flex-between" style="margin-top: 15px;">
-            <input type="text" id="newRefName" placeholder="İsim, Ünvan" style="flex:2">
-            <textarea id="newRefText" placeholder="Referans yorumu..." rows="2" style="flex:3"></textarea>
-            <button onclick="addReference()" style="width: auto; margin:0;">➕ Ekle</button>
         </div>
     </div>
 
@@ -497,8 +396,8 @@
     <div class="card" id="paketler">
         <h2><i class="fas fa-gem"></i> Üyelik Paketleri</h2>
         <div class="packages">
-            <div class="package-card"><h3>🎁 FREE</h3><div class="package-price">0 ₺</div><ul class="package-features"><li>✅ Demo görüntüleme</li><li>❌ İçerik üretimi yok</li><li>❌ E-Kitap yok</li></ul><a href="https://wa.me/905418660202?text=Free%20pakete%20kaydolmak%20istiyorum" class="whatsapp-btn">Başla</a></div>
-            <div class="package-card"><h3>🚀 PRO</h3><div class="package-price">1.499 ₺/yıl</div><ul class="package-features"><li>✅ Sınırsız içerik</li><li>✅ Gemini AI + Diğer modeller</li><li>✅ E-Kitap: 100 sayfa</li></ul><a href="https://wa.me/905418660202?text=PRO%20paketi%20satın%20almak%20istiyorum.%201499₺" class="whatsapp-btn">Satın Al</a></div>
+            <div class="package-card"><h3>🎁 FREE</h3><div class="package-price">0 ₺</div><ul class="package-features"><li>✅ Demo görüntüleme</li><li>❌ İçerik üretimi yok</li></ul><a href="https://wa.me/905418660202?text=Free%20pakete%20kaydolmak%20istiyorum" class="whatsapp-btn">Başla</a></div>
+            <div class="package-card"><h3>🚀 PRO</h3><div class="package-price">1.499 ₺/yıl</div><ul class="package-features"><li>✅ Sınırsız içerik</li><li>✅ Gemini AI + Diğer modeller</li><li>✅ Tüm yazım stilleri</li></ul><a href="https://wa.me/905418660202?text=PRO%20paketi%20satın%20almak%20istiyorum.%201499₺" class="whatsapp-btn">Satın Al</a></div>
             <div class="package-card"><h3>👑 PREMIUM</h3><div class="package-price">3.499 ₺/yıl</div><ul class="package-features"><li>✅ Tüm Pro özellikler</li><li>✅ Özel prompt şablonları</li><li>✅ Öncelikli destek</li></ul><a href="https://wa.me/905418660202?text=PREMIUM%20paketi%20satın%20almak%20istiyorum.%203499₺" class="whatsapp-btn">Satın Al</a></div>
             <div class="package-card"><h3>🏆 ELITE VIP</h3><div class="package-price">6.999 ₺/yıl</div><ul class="package-features"><li>✅ Tüm Premium özellikler</li><li>✅ Birebir AI koçluğu</li><li>✅ 7/24 WhatsApp danışmanlık</li></ul><a href="https://wa.me/905418660202?text=ELITE%20VIP%20paketini%20satın%20almak%20istiyorum.%206999₺" class="whatsapp-btn">Satın Al</a></div>
         </div>
@@ -506,12 +405,11 @@
 
     <!-- Yönetim Paneli -->
     <div id="adminModal" class="card hidden">
-        <h2><i class="fas fa-lock"></i> Yönetim Paneli (Şifreli)</h2>
+        <h2><i class="fas fa-lock"></i> Yönetim Paneli</h2>
         <div class="flex-between"><input type="password" id="adminPass" placeholder="Yönetici Şifresi" style="flex:1"><button onclick="checkAdmin()" style="width:auto;">Giriş</button></div>
         <div id="adminContent" class="hidden admin-panel">
             <h3>📊 İstatistikler</h3>
             <p><strong>Toplam İçerik Üretimi:</strong> <span id="totalContent">0</span></p>
-            <p><strong>Aktif Aboneler:</strong> 127</p>
             <button onclick="exportLogsAsCSV()">📎 Logları CSV Dışa Aktar</button>
             <hr style="margin: 15px 0;">
             <h4>📋 Kullanıcı Logları</h4>
@@ -533,7 +431,7 @@
 </div>
 
 <script>
-    // ============ YAZIM STİLİ DEĞİŞKENİ ============
+    // ============ YAZIM STİLİ ============
     let currentWritingStyle = localStorage.getItem("writingStyle") || "Profesyonel / Kurumsal";
     
     function selectWritingStyle(style) {
@@ -544,7 +442,7 @@
         alert(`✅ Yazım stili "${currentWritingStyle}" olarak değiştirildi!`);
     }
     
-    // ============ TEK API ANAHTARI ============
+    // ============ API ANAHTARI ============
     let geminiApiKey = localStorage.getItem("geminiApiKey") || "";
     
     function saveApiKey() {
@@ -573,12 +471,11 @@
         }
     }
     
-    // Sayfa yüklendiğinde API anahtarını inputa yükle
     if(document.getElementById("geminiApiKey")) {
         document.getElementById("geminiApiKey").value = geminiApiKey;
     }
     
-    // ============ İKON TIKLAMA FONKSİYONU ============
+    // ============ İKON TIKLAMA ============
     function selectContentType(type) {
         const contentTypeSelect = document.getElementById("contentType");
         for(let i = 0; i < contentTypeSelect.options.length; i++) {
@@ -592,16 +489,14 @@
         alert(`📌 "${type}" seçildi! Şimdi konunuzu girin ve "Gemini AI ile İçerik Oluştur" butonuna tıklayın.`);
     }
     
-    // ============ PROFİL VE PROJE ============
+    // ============ PROFİL ============
     let currentMembership = localStorage.getItem("userMembership") || "Free";
     let userName = localStorage.getItem("userName") || "";
     let userEmail = localStorage.getItem("userEmail") || "";
     let projectName = localStorage.getItem("projectName") || "";
     let projectNumber = localStorage.getItem("projectNumber") || "";
     let lastGeneratedContent = "";
-    let currentEbookContent = "";
     let knowledgeBase = JSON.parse(localStorage.getItem("knowledgeBase") || "[]");
-    let references = JSON.parse(localStorage.getItem("references") || "[{\"name\":\"Ahmet K., Girişimci\",\"text\":\"Harika bir platform! İçerik üretim süremi %70 kısalttı.\"},{\"name\":\"Zeynep T., Pazarlama Müdürü\",\"text\":\"Gemini AI ile içerik üretmek çok kolay. Kesinlikle tavsiye ederim.\"}]");
     
     function saveProfile() {
         userName = document.getElementById("userName").value.trim();
@@ -617,7 +512,7 @@
         localStorage.setItem("projectName", projectName);
         localStorage.setItem("projectNumber", projectNumber);
         
-        document.getElementById("profileStatus").innerHTML = `✅ Profil kaydedildi!<br>👤 ${userName}<br>📧 ${userEmail}<br>📁 ${projectName || "Belirtilmemiş"}<br>🔢 ${projectNumber || "Belirtilmemiş"}`;
+        document.getElementById("profileStatus").innerHTML = `✅ Profil kaydedildi!<br>👤 ${userName}<br>📧 ${userEmail}<br>📁 ${projectName || "Belirtilmemiş"}`;
         logAction(`Profil kaydedildi: ${userName} - ${projectName || "Proje yok"}`);
     }
     
@@ -642,21 +537,18 @@
         const blocker = document.getElementById("freeBlocker");
         const contentArea = document.getElementById("contentArea");
         const generateBtn = document.getElementById("generateBtn");
-        const ebookBtn = document.getElementById("ebookBtn");
         const freeMsg = document.getElementById("freeUpgradeMsg");
         
         if(isFree) {
             if(blocker) blocker.style.display = "block";
             if(contentArea) contentArea.style.display = "none";
             if(generateBtn) generateBtn.disabled = true;
-            if(ebookBtn) ebookBtn.disabled = true;
-            if(freeMsg) freeMsg.innerHTML = "🔒 <strong>Ücretsiz kullanıcılar içerik üretemez!</strong> Sınırsız içerik üretimi, 100 sayfa e-kitap ve Gemini AI için hemen WhatsApp'tan bilgi alın!<br><a href='https://wa.me/905418660202?text=Merhaba,%20içerik%20üretim%20paketi%20satın%20almak%20istiyorum.' target='_blank' style='color:white; background:#25D366; display:inline-block; padding:8px 20px; border-radius:40px; margin-top:10px; text-decoration:none;'>📲 WhatsApp'tan Bilgi Al</a>";
+            if(freeMsg) freeMsg.innerHTML = "🔒 <strong>Ücretsiz kullanıcılar içerik üretemez!</strong> Sınırsız içerik üretimi için hemen WhatsApp'tan bilgi alın!<br><a href='https://wa.me/905418660202?text=Merhaba,%20içerik%20üretim%20paketi%20satın%20almak%20istiyorum.' target='_blank' style='color:white; background:#25D366; display:inline-block; padding:8px 20px; border-radius:40px; margin-top:10px; text-decoration:none;'>📲 WhatsApp'tan Bilgi Al</a>";
         } else {
             if(blocker) blocker.style.display = "none";
             if(contentArea) contentArea.style.display = "block";
             if(generateBtn) generateBtn.disabled = false;
-            if(ebookBtn) ebookBtn.disabled = false;
-            if(freeMsg) freeMsg.innerHTML = "🚀 <strong>Pro/Premium/Elite üyelere özel!</strong> Sınırsız içerik üretimi, 100 sayfa e-kitap ve Gemini AI aktif!";
+            if(freeMsg) freeMsg.innerHTML = "🚀 <strong>Pro/Premium/Elite üyelere özel!</strong> Sınırsız içerik üretimi ve Gemini AI aktif!";
         }
     }
     
@@ -668,7 +560,6 @@
             user: userName || "Misafir", 
             email: userEmail || "Belirtilmemiş",
             project: projectName || "Belirtilmemiş",
-            projectNo: projectNumber || "Belirtilmemiş",
             plan: currentMembership 
         });
         if(logs.length > 50) logs.pop();
@@ -682,11 +573,11 @@
         document.getElementById("totalContent").innerText = contentLogs.length;
     }
     
-    // Demo içerik üretici (API yoksa yedek)
+    // Demo içerik üretici
     function generateDemoContent(contentType, topic, notes) {
         const style = currentWritingStyle;
         if(style === "Profesyonel / Kurumsal") {
-            return `📊 PROFESYONEL İÇERİK:\n\nSayın yetkili,\n\n${topic} konusunda kapsamlı bir değerlendirme yapılmıştır. Araştırmalar göstermektedir ki, ${topic} alanında stratejik yaklaşımlar kurumsal başarıyı doğrudan etkilemektedir.\n\nRaporumuzda detaylı analizler sunulmaktadır.`;
+            return `📊 PROFESYONEL İÇERİK:\n\nSayın yetkili,\n\n${topic} konusunda kapsamlı bir değerlendirme yapılmıştır. Araştırmalar göstermektedir ki, ${topic} alanında stratejik yaklaşımlar kurumsal başarıyı doğrudan etkilemektedir.\n\nDetaylı analizler için lütfen ekteki raporu inceleyiniz.`;
         } else if(style === "Samimi / Günlük Konuşma") {
             return `💬 MERHABA! 👋\n\n${topic} hakkında konuşalım mı? Bildiğin gibi, ${topic} hayatımızın her yerinde. Hadi gel biraz da bununla ilgili sohbet edelim.\n\nBen şahsen düşünüyorum ki...`;
         } else if(style === "Eğlenceli / Mizahi") {
@@ -761,47 +652,6 @@ Lütfen ${styleType} stilinde, Türkçe, akıcı ve değerli bir içerik üret. 
         alert("✅ İçerik başarıyla oluşturuldu!");
     }
     
-    // E-Kitap Üretimi
-    async function generateEbook() {
-        if(currentMembership === "Free") {
-            alert("❌ Ücretsiz kullanıcılar e-kitap üretemez! Lütfen bir paket satın alın.");
-            window.open("https://wa.me/905418660202?text=Merhaba,%20e-kitap%20üretim%20paketi%20satın%20almak%20istiyorum.", "_blank");
-            return;
-        }
-        
-        const title = document.getElementById("ebookTitle").value || "Yapay Zeka ile Dijital Dönüşüm";
-        const author = document.getElementById("ebookAuthor").value || "Anadolu Network";
-        const topic = document.getElementById("ebookTopic").value || "Yapay Zeka ve Gelecek";
-        const pageCount = 100;
-        
-        document.getElementById("ebookProgress").classList.remove("hidden");
-        let ebookContent = `# ${title}\n### Yazar: ${author}\n### Proje: ${projectName || "Belirtilmemiş"}\n### Konu: ${topic}\n\n---\n\n`;
-        
-        for(let i = 1; i <= pageCount; i++) {
-            const percent = (i / pageCount) * 100;
-            document.getElementById("progressFill").style.width = `${percent}%`;
-            document.getElementById("progressText").innerHTML = `${i}/${pageCount} sayfa üretiliyor...`;
-            
-            ebookContent += `## Sayfa ${i}\n\n`;
-            ebookContent += `Bu sayfada **${topic}** konusunun ${i}. bölümü ele alınmaktadır. `;
-            ebookContent += `Yapay zeka teknolojileri günümüzde hızla gelişmekte ve hayatımızın her alanına entegre olmaktadır.\n\n`;
-            ebookContent += `**Bölüm ${i} Özeti:** Bu bölümde ${topic} alanındaki en güncel gelişmeler incelenmiştir.\n\n`;
-            ebookContent += `---\n\n`;
-            
-            await new Promise(resolve => setTimeout(resolve, 5));
-        }
-        
-        ebookContent += `\n\n## Sonuç\n\nBu kitap **${topic}** konusunda ${pageCount} sayfalık kapsamlı bir rehber sunmaktadır.\n\n`;
-        ebookContent += `© 2025 ${author} - Tüm hakları saklıdır.\n`;
-        
-        currentEbookContent = ebookContent;
-        document.getElementById("ebookPreview").innerHTML = ebookContent.substring(0, 1500).replace(/\n/g, '<br>') + "\n\n... (" + pageCount + " sayfa tamamlandı)";
-        document.getElementById("progressText").innerHTML = pageCount + "/" + pageCount + " sayfa tamamlandı!";
-        setTimeout(() => document.getElementById("ebookProgress").classList.add("hidden"), 2000);
-        logAction(`${pageCount} sayfalık e-kitap üretildi: ${title} (Proje: ${projectName})`);
-        alert(`✅ ${pageCount} sayfalık e-kitap başarıyla oluşturuldu!`);
-    }
-    
     // Dışa aktarma fonksiyonları
     function copyToClipboard() { if(lastGeneratedContent) { navigator.clipboard.writeText(lastGeneratedContent); alert("✅ Kopyalandı!"); } else alert("❌ Önce içerik üretin!"); }
     function downloadAsTxt() { if(lastGeneratedContent) { const blob = new Blob([lastGeneratedContent], {type:"text/plain"}); saveAs(blob, `icerik_${Date.now()}.txt`); } else alert("❌ Önce içerik üretin!"); }
@@ -810,62 +660,6 @@ Lütfen ${styleType} stilinde, Türkçe, akıcı ve değerli bir içerik üret. 
     async function downloadAsPNG() { if(lastGeneratedContent) { const div = document.getElementById("output"); div.style.backgroundColor="#07152e"; div.style.padding="20px"; const canvas = await html2canvas(div); const link = document.createElement("a"); link.download = `icerik_${Date.now()}.png`; link.href = canvas.toDataURL(); link.click(); div.style.backgroundColor=""; div.style.padding=""; } else alert("❌ Önce içerik üretin!"); }
     async function downloadAsJPG() { if(lastGeneratedContent) { const div = document.getElementById("output"); div.style.backgroundColor="#07152e"; div.style.padding="20px"; const canvas = await html2canvas(div); const link = document.createElement("a"); link.download = `icerik_${Date.now()}.jpg`; link.href = canvas.toDataURL("image/jpeg"); link.click(); div.style.backgroundColor=""; div.style.padding=""; } else alert("❌ Önce içerik üretin!"); }
     function downloadAsCSV() { if(lastGeneratedContent) { const csv = `"İçerik","${lastGeneratedContent.replace(/"/g, '""')}"`; const blob = new Blob([csv], {type:"text/csv"}); saveAs(blob, `icerik_${Date.now()}.csv`); } else alert("❌ Önce içerik üretin!"); }
-    function downloadEbookAsTXT() { if(currentEbookContent) { const blob = new Blob([currentEbookContent], {type:"text/plain"}); saveAs(blob, `ekitap_${Date.now()}.txt`); } else alert("❌ Önce e-kitap oluşturun!"); }
-    function downloadEbookAsDocx() { if(currentEbookContent) { const blob = new Blob([`<html><body><pre>${currentEbookContent.replace(/</g, '&lt;')}</pre></body></html>`], {type:"application/msword"}); saveAs(blob, `ekitap_${Date.now()}.doc`); } else alert("❌ Önce e-kitap oluşturun!"); }
-    async function downloadEbookAsPDF() { if(currentEbookContent) { const { jsPDF } = window.jspdf; const doc = new jsPDF(); doc.text(currentEbookContent.substring(0, 5000), 10, 10); doc.save(`ekitap_${Date.now()}.pdf`); } else alert("❌ Önce e-kitap oluşturun!"); }
-    
-    // Veritabanlı AI
-    function renderKnowledgeList() { 
-        const container = document.getElementById("knowledgeList"); 
-        if(knowledgeBase.length===0) container.innerHTML="📭 Henüz doküman yok";
-        else container.innerHTML = knowledgeBase.map((d,i)=>`<div class="knowledge-item"><span>📄 ${d.content.substring(0,50)}...</span><button onclick="deleteDocument(${i})" style="width:auto; padding:4px 10px;">🗑️ Sil</button></div>`).join(''); 
-    }
-    function addDocument() { 
-        const content = document.getElementById("docContent").value.trim(); 
-        if(content) { 
-            knowledgeBase.push({content, date: new Date().toISOString()}); 
-            localStorage.setItem("knowledgeBase",JSON.stringify(knowledgeBase)); 
-            renderKnowledgeList(); 
-            document.getElementById("docContent").value=""; 
-            alert("✅ Doküman eklendi."); 
-            logAction(`Doküman eklendi: ${content.substring(0,50)}...`);
-        } else alert("❌ İçerik girin!"); 
-    }
-    function deleteDocument(i) { knowledgeBase.splice(i,1); localStorage.setItem("knowledgeBase",JSON.stringify(knowledgeBase)); renderKnowledgeList(); alert("✅ Doküman silindi."); }
-    function queryKnowledgeBase() { 
-        const q = document.getElementById("queryInput").value.trim(); 
-        if(!q) alert("❌ Soru girin!"); 
-        else if(knowledgeBase.length===0) document.getElementById("queryResult").innerHTML="📭 Bilgi bankası boş. Lütfen önce doküman ekleyin.";
-        else { 
-            let results = knowledgeBase.filter(d=>d.content.toLowerCase().includes(q.toLowerCase())); 
-            if(results.length) {
-                document.getElementById("queryResult").innerHTML = `🔍 **${results.length} doküman bulundu:**\n\n${results.map(r=>`📄 ${r.content.substring(0,200)}...`).join('\n\n')}`;
-            } else {
-                document.getElementById("queryResult").innerHTML = `"${q}" ile ilgili bilgi bulunamadı.`;
-            }
-        } 
-    }
-    function clearKnowledgeBase() { if(confirm("Tüm dokümanlar silinecek?")) { knowledgeBase=[]; localStorage.setItem("knowledgeBase","[]"); renderKnowledgeList(); alert("✅ Tüm dokümanlar temizlendi."); } }
-    
-    // Referanslar
-    function renderReferences() { 
-        const container = document.getElementById("referencesList"); 
-        container.innerHTML = references.map((r,i)=>`<div class="reference-item"><div class="reference-text">"${r.text}"</div><div class="reference-author">— ${r.name}</div><button onclick="deleteReference(${i})" style="width:auto; padding:4px 10px;">🗑️ Sil</button></div>`).join('') || "Henüz referans yok."; 
-    }
-    function addReference() { 
-        const name = document.getElementById("newRefName").value.trim(); 
-        const text = document.getElementById("newRefText").value.trim(); 
-        if(name&&text) { 
-            references.push({name,text}); 
-            localStorage.setItem("references",JSON.stringify(references)); 
-            renderReferences(); 
-            document.getElementById("newRefName").value=""; 
-            document.getElementById("newRefText").value=""; 
-            alert("✅ Referans eklendi."); 
-            logAction(`Referans eklendi: ${name}`);
-        } else alert("❌ İsim ve yorum girin!"); 
-    }
-    function deleteReference(i) { references.splice(i,1); localStorage.setItem("references",JSON.stringify(references)); renderReferences(); alert("✅ Referans silindi."); }
     
     // Yönetim Paneli
     function checkAdmin() { 
@@ -880,19 +674,17 @@ Lütfen ${styleType} stilinde, Türkçe, akıcı ve değerli bir içerik üret. 
     }
     function exportLogsAsCSV() { 
         let logs = JSON.parse(localStorage.getItem("anadolu_content_logs")||"[]"); 
-        let csv = "Tarih,Kullanıcı,E-posta,Proje,ProjeNo,Plan,Aksiyon\n"+logs.map(l=>`"${l.date}","${l.user}","${l.email}","${l.project}","${l.projectNo}","${l.plan}","${l.action}"`).join("\n"); 
+        let csv = "Tarih,Kullanıcı,E-posta,Proje,Plan,Aksiyon\n"+logs.map(l=>`"${l.date}","${l.user}","${l.email}","${l.project}","${l.plan}","${l.action}"`).join("\n"); 
         const blob = new Blob([csv],{type:"text/csv"}); 
         saveAs(blob,`anadolu_logs_${Date.now()}.csv`); 
     }
     function clearAllLogs() { if(confirm("Tüm loglar silinecek?")) { localStorage.removeItem("anadolu_content_logs"); loadAdminLogs(); alert("✅ Loglar temizlendi."); } }
     
-    // Sayfa içi navigasyon
     function scrollToSection(id) {
         const element = document.getElementById(id);
         if(element) element.scrollIntoView({ behavior: 'smooth' });
     }
     
-    // Event Listeners
     document.getElementById("showAdminBtn").addEventListener("click", (e) => { 
         e.preventDefault(); 
         document.getElementById("adminModal").classList.toggle("hidden"); 
@@ -909,8 +701,6 @@ Lütfen ${styleType} stilinde, Türkçe, akıcı ve değerli bir içerik üret. 
     document.getElementById("currentStyleName").innerHTML = currentWritingStyle;
     document.getElementById("styleTypeSelect").value = currentWritingStyle;
     
-    renderKnowledgeList();
-    renderReferences();
     updateFreeBlock();
     updateContentCount();
     logAction("Sayfa ziyaret edildi");
@@ -918,7 +708,6 @@ Lütfen ${styleType} stilinde, Türkçe, akıcı ve değerli bir içerik üret. 
     // Global fonksiyonlar
     window.selectWritingStyle = selectWritingStyle;
     window.selectContentType = selectContentType;
-    window.generateEbook = generateEbook;
     window.generateContentWithAI = generateContentWithAI;
     window.saveApiKey = saveApiKey;
     window.saveProfile = saveProfile;
@@ -930,19 +719,10 @@ Lütfen ${styleType} stilinde, Türkçe, akıcı ve değerli bir içerik üret. 
     window.downloadAsPNG = downloadAsPNG;
     window.downloadAsJPG = downloadAsJPG;
     window.downloadAsCSV = downloadAsCSV;
-    window.downloadEbookAsTXT = downloadEbookAsTXT;
-    window.downloadEbookAsDocx = downloadEbookAsDocx;
-    window.downloadEbookAsPDF = downloadEbookAsPDF;
-    window.addDocument = addDocument;
-    window.queryKnowledgeBase = queryKnowledgeBase;
-    window.clearKnowledgeBase = clearKnowledgeBase;
-    window.addReference = addReference;
-    window.deleteReference = deleteReference;
     window.checkAdmin = checkAdmin;
     window.exportLogsAsCSV = exportLogsAsCSV;
     window.clearAllLogs = clearAllLogs;
     window.scrollToSection = scrollToSection;
-    window.deleteDocument = deleteDocument;
 </script>
 </body>
 </html>
