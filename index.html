@@ -16,7 +16,6 @@
             color: #f0f0f0;
             padding-bottom: 20px;
         }
-        .gold-text { color: #d4af37 !important; }
         .logo-area {
             display: flex;
             align-items: center;
@@ -44,7 +43,7 @@
             margin: 20px;
             display: flex;
             flex-wrap: wrap;
-            justify-content: space-between;
+            justify-content: flex-end;
             align-items: center;
             gap: 15px;
             border: 1px solid rgba(212, 175, 55, 0.3);
@@ -52,16 +51,6 @@
         .nav-links { display: flex; gap: 20px; flex-wrap: wrap; }
         .nav-links a { color: #f0f0f0; text-decoration: none; font-weight: 500; transition: 0.3s; font-size: 0.9rem; cursor: pointer; }
         .nav-links a:hover { color: #d4af37; }
-        .whatsapp-nav {
-            background: #25D366;
-            padding: 6px 16px;
-            border-radius: 40px;
-            color: white !important;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            text-decoration: none;
-        }
         .container { max-width: 800px; margin: 0 auto; padding: 0 20px; }
         .card {
             background: #0f2a4a;
@@ -242,19 +231,18 @@
     <div class="logo-area">
         <div class="logo-circle"><i class="fas fa-robot"></i></div>
         <div class="brand-text">
-            <h1>ANADOLU NETWORK: ODAK DİJİTAL İÇERİK ÜRETİM MERKEZİ</h1>
+            <h1>ANADOLU NETWORK:  ODAK DİJİTAL İÇERİK ÜRETİM MERKEZİ</h1>
             <p>Gemini AI Destekli | Proje Bazlı İçerik Üretim Merkezi</p>
         </div>
     </div>
 
-    <!-- Navigasyon -->
+    <!-- Navigasyon (WhatsApp butonu kaldırıldı) -->
     <div class="navbar">
         <div class="nav-links">
             <a href="#" onclick="scrollToSection('icerik')">📝 İçerik Üret</a>
             <a href="#" onclick="scrollToSection('paketler')">💎 Üyelik</a>
             <a href="#" id="showAdminBtn">🔐 Yönetim</a>
         </div>
-        <a href="https://wa.me/905418660202" target="_blank" class="whatsapp-nav"><i class="fab fa-whatsapp"></i> 0541 866 02 02</a>
     </div>
 
     <!-- Gemini API Ayarları -->
@@ -496,7 +484,6 @@
     let projectName = localStorage.getItem("projectName") || "";
     let projectNumber = localStorage.getItem("projectNumber") || "";
     let lastGeneratedContent = "";
-    let knowledgeBase = JSON.parse(localStorage.getItem("knowledgeBase") || "[]");
     
     function saveProfile() {
         userName = document.getElementById("userName").value.trim();
