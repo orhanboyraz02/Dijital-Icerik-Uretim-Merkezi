@@ -227,7 +227,9 @@
             min-width: 100px;
             transition: 0.2s;
             border: 1px solid rgba(212, 175, 55, 0.3);
+            cursor: pointer;
         }
+        .icon-card:hover { transform: translateY(-3px); border-color: #d4af37; background: #1e3a5f; }
         .icon-card i { font-size: 2rem; color: #d4af37; margin-bottom: 8px; }
         .icon-card span { font-size: 0.7rem; display: block; }
         .free-upgrade {
@@ -305,18 +307,18 @@
         <div id="profileStatus" class="output-box" style="margin-top:10px;"></div>
     </div>
 
-    <!-- NE ÜRETMEK İSTERSİN? -->
+    <!-- NE ÜRETMEK İSTERSİN? - İKONLAR ÇALIŞIYOR -->
     <div class="card">
         <h2><i class="fas fa-question-circle"></i> Ne üretmek istersin?</h2>
         <div class="content-icons">
-            <div class="icon-card"><i class="fas fa-file-alt"></i><span>Blog Metni</span></div>
-            <div class="icon-card"><i class="fas fa-book"></i><span>E-Kitap</span></div>
-            <div class="icon-card"><i class="fas fa-video"></i><span>Video Senaryosu</span></div>
-            <div class="icon-card"><i class="fab fa-instagram"></i><span>Sosyal Medya</span></div>
-            <div class="icon-card"><i class="fab fa-google"></i><span>SEO/Google Ads</span></div>
-            <div class="icon-card"><i class="fas fa-paint-brush"></i><span>Logo Fikri</span></div>
-            <div class="icon-card"><i class="fas fa-language"></i><span>Çeviri</span></div>
-            <div class="icon-card"><i class="fas fa-podcast"></i><span>Podcast Senaryosu</span></div>
+            <div class="icon-card" onclick="selectContentType('Blog Metni')"><i class="fas fa-file-alt"></i><span>Blog Metni</span></div>
+            <div class="icon-card" onclick="selectContentType('E-Kitap Bölümü')"><i class="fas fa-book"></i><span>E-Kitap</span></div>
+            <div class="icon-card" onclick="selectContentType('Video Senaryosu')"><i class="fas fa-video"></i><span>Video Senaryosu</span></div>
+            <div class="icon-card" onclick="selectContentType('Sosyal Medya İçeriği')"><i class="fab fa-instagram"></i><span>Sosyal Medya</span></div>
+            <div class="icon-card" onclick="selectContentType('SEO/Google Ads')"><i class="fab fa-google"></i><span>SEO/Google Ads</span></div>
+            <div class="icon-card" onclick="selectContentType('Logo Fikri')"><i class="fas fa-paint-brush"></i><span>Logo Fikri</span></div>
+            <div class="icon-card" onclick="selectContentType('Çeviri')"><i class="fas fa-language"></i><span>Çeviri</span></div>
+            <div class="icon-card" onclick="selectContentType('Podcast Senaryosu')"><i class="fas fa-podcast"></i><span>Podcast Senaryosu</span></div>
         </div>
         <div id="freeUpgradeMsg" class="free-upgrade">
             🚀 <strong>Pro/Premium/Elite üyelere özel!</strong> Sınırsız içerik üretimi, 100 sayfa e-kitap ve tüm AI modelleri için hemen WhatsApp'tan bilgi alın!
@@ -354,6 +356,7 @@
                         <option value="SEO/Google Ads">🔍 SEO / Google Ads</option>
                         <option value="Logo Fikri">🎨 Logo Tasarım Fikri</option>
                         <option value="Çeviri">🌍 Çeviri (TR↔EN)</option>
+                        <option value="Podcast Senaryosu">🎙️ Podcast Senaryosu</option>
                     </select>
                     <label>Anlatım Stili</label>
                     <select id="styleType">
@@ -387,7 +390,7 @@
                         <li><strong>API anahtarı:</strong> Yukarıdaki karttan girin</li>
                     </ul>
                     <div class="output-box" style="margin-top: 20px;">
-                        💡 <strong>Pro İpucu:</strong> API anahtarınızı yukarıdan girin. Anahtar yoksa demo modda çalışır.
+                        💡 <strong>Pro İpucu:</strong> İkonlara tıklayarak içerik türünü hızlıca seçebilirsiniz!
                     </div>
                 </div>
             </div>
@@ -527,6 +530,23 @@
     // Sayfa yüklendiğinde API anahtarını inputa yükle
     if(document.getElementById("geminiApiKey")) {
         document.getElementById("geminiApiKey").value = geminiApiKey;
+    }
+    
+    // ============ İKON TIKLAMA FONKSİYONU ============
+    function selectContentType(type) {
+        // İçerik türünü dropdown'da seç
+        const contentTypeSelect = document.getElementById("contentType");
+        for(let i = 0; i < contentTypeSelect.options.length; i++) {
+            if(contentTypeSelect.options[i].value === type) {
+                contentTypeSelect.selectedIndex = i;
+                break;
+            }
+        }
+        // Sayfayı içerik üretim bölümüne kaydır
+        document.getElementById("icerik").scrollIntoView({ behavior: 'smooth' });
+        // Konu inputuna odaklan
+        document.getElementById("topic").focus();
+        alert(`📌 "${type}" seçildi! Şimdi konunuzu girin ve "Gemini AI ile İçerik Oluştur" butonuna tıklayın.`);
     }
     
     // ============ PROFİL VE PROJE ============
@@ -834,6 +854,7 @@ Lütfen Türkçe, akıcı ve değerli bir içerik üret. Hedef kitleye uygun ols
     logAction("Sayfa ziyaret edildi");
     
     // Global fonksiyonlar
+    window.selectContentType = selectContentType;
     window.generateEbook = generateEbook;
     window.generateContentWithAI = generateContentWithAI;
     window.saveApiKey = saveApiKey;
