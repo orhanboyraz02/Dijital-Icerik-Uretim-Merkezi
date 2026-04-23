@@ -242,6 +242,22 @@
             font-weight: bold;
         }
         .required-field { color: #ff6b6b; font-size: 0.7rem; margin-left: 5px; }
+        .style-badge {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            margin: 5px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .style-badge:hover { transform: scale(1.05); }
+        .style-prof { background: #1e3a5f; color: #d4af37; border: 1px solid #d4af37; }
+        .style-casual { background: #2e7d32; color: white; }
+        .style-fun { background: #e65100; color: white; }
+        .style-inspire { background: #6a1b9a; color: white; }
+        .style-tech { background: #1565c0; color: white; }
+        .style-academic { background: #c62828; color: white; }
         @media (max-width: 768px) { .navbar { flex-direction: column; text-align: center; } }
     </style>
 </head>
@@ -252,7 +268,7 @@
     <div class="logo-area">
         <div class="logo-circle"><i class="fas fa-robot"></i></div>
         <div class="brand-text">
-            <h1>ANADOLU NETWORK</h1>
+            <h1>ANADOLU NETWORK: ODAK DİJİTAL İÇERİK ÜRETİM MERKEZİ</h1>
             <p>10 Yapay Zeka Modeli | Gemini AI Entegre | Proje Bazlı İçerik Üretim Merkezi</p>
         </div>
     </div>
@@ -320,9 +336,26 @@
             <div class="icon-card" onclick="selectContentType('Çeviri')"><i class="fas fa-language"></i><span>Çeviri</span></div>
             <div class="icon-card" onclick="selectContentType('Podcast Senaryosu')"><i class="fas fa-podcast"></i><span>Podcast Senaryosu</span></div>
         </div>
-        <div id="freeUpgradeMsg" class="free-upgrade">
-            🚀 <strong>Pro/Premium/Elite üyelere özel!</strong> Sınırsız içerik üretimi, 100 sayfa e-kitap ve tüm AI modelleri için hemen WhatsApp'tan bilgi alın!
+    </div>
+
+    <!-- Yazım Stilleri (Tone of Voice) -->
+    <div class="card">
+        <h2><i class="fas fa-pen-fancy"></i> Yazım Stili Seç</h2>
+        <div style="display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin: 10px 0;">
+            <span class="style-badge style-prof" onclick="selectWritingStyle('Profesyonel / Kurumsal')">🏢 Profesyonel / Kurumsal</span>
+            <span class="style-badge style-casual" onclick="selectWritingStyle('Samimi / Günlük Konuşma')">💬 Samimi / Günlük Konuşma</span>
+            <span class="style-badge style-fun" onclick="selectWritingStyle('Eğlenceli / Mizahi')">😄 Eğlenceli / Mizahi</span>
+            <span class="style-badge style-inspire" onclick="selectWritingStyle('İlham Verici / Motivasyon')">✨ İlham Verici / Motivasyon</span>
+            <span class="style-badge style-tech" onclick="selectWritingStyle('Teknik / Detaylı')">⚙️ Teknik / Detaylı</span>
+            <span class="style-badge style-academic" onclick="selectWritingStyle('Akademik / Bilimsel')">📚 Akademik / Bilimsel</span>
         </div>
+        <div id="selectedStyleDisplay" class="output-box" style="margin-top: 10px; text-align: center;">
+            📌 Seçili stil: <strong id="currentStyleName">Profesyonel / Kurumsal</strong>
+        </div>
+    </div>
+
+    <div id="freeUpgradeMsg" class="free-upgrade">
+        🚀 <strong>Pro/Premium/Elite üyelere özel!</strong> Sınırsız içerik üretimi, 100 sayfa e-kitap ve tüm AI modelleri için hemen WhatsApp'tan bilgi alın!
     </div>
 
     <!-- İçerik Üretim Merkezi -->
@@ -358,12 +391,14 @@
                         <option value="Çeviri">🌍 Çeviri (TR↔EN)</option>
                         <option value="Podcast Senaryosu">🎙️ Podcast Senaryosu</option>
                     </select>
-                    <label>Anlatım Stili</label>
-                    <select id="styleType">
-                        <option value="Motivasyon">🔥 Motivasyon / İlham</option>
-                        <option value="Akademik">📚 Akademik / Araştırma</option>
-                        <option value="Hikaye/Kurgu">📖 Hikaye / Kurgu</option>
-                        <option value="Podcast">🎙️ Podcast Senaryosu</option>
+                    <label>Yazım Stili</label>
+                    <select id="styleTypeSelect">
+                        <option value="Profesyonel / Kurumsal">🏢 Profesyonel / Kurumsal</option>
+                        <option value="Samimi / Günlük Konuşma">💬 Samimi / Günlük Konuşma</option>
+                        <option value="Eğlenceli / Mizahi">😄 Eğlenceli / Mizahi</option>
+                        <option value="İlham Verici / Motivasyon">✨ İlham Verici / Motivasyon</option>
+                        <option value="Teknik / Detaylı">⚙️ Teknik / Detaylı</option>
+                        <option value="Akademik / Bilimsel">📚 Akademik / Bilimsel</option>
                     </select>
                     <label>Konu / Anahtar Kelime <span class="required-field">*</span></label>
                     <input type="text" id="topic" placeholder="Örn: Finansal Özgürlük, Yapay Zeka, Liderlik">
@@ -390,7 +425,7 @@
                         <li><strong>API anahtarı:</strong> Yukarıdaki karttan girin</li>
                     </ul>
                     <div class="output-box" style="margin-top: 20px;">
-                        💡 <strong>Pro İpucu:</strong> İkonlara tıklayarak içerik türünü hızlıca seçebilirsiniz!
+                        💡 <strong>Pro İpucu:</strong> İkonlara tıklayarak içerik türünü, stillere tıklayarak yazım stilini hızlıca seçebilirsiniz!
                     </div>
                 </div>
             </div>
@@ -498,6 +533,17 @@
 </div>
 
 <script>
+    // ============ YAZIM STİLİ DEĞİŞKENİ ============
+    let currentWritingStyle = localStorage.getItem("writingStyle") || "Profesyonel / Kurumsal";
+    
+    function selectWritingStyle(style) {
+        currentWritingStyle = style;
+        localStorage.setItem("writingStyle", currentWritingStyle);
+        document.getElementById("currentStyleName").innerHTML = currentWritingStyle;
+        document.getElementById("styleTypeSelect").value = currentWritingStyle;
+        alert(`✅ Yazım stili "${currentWritingStyle}" olarak değiştirildi!`);
+    }
+    
     // ============ TEK API ANAHTARI ============
     let geminiApiKey = localStorage.getItem("geminiApiKey") || "";
     
@@ -534,7 +580,6 @@
     
     // ============ İKON TIKLAMA FONKSİYONU ============
     function selectContentType(type) {
-        // İçerik türünü dropdown'da seç
         const contentTypeSelect = document.getElementById("contentType");
         for(let i = 0; i < contentTypeSelect.options.length; i++) {
             if(contentTypeSelect.options[i].value === type) {
@@ -542,9 +587,7 @@
                 break;
             }
         }
-        // Sayfayı içerik üretim bölümüne kaydır
         document.getElementById("icerik").scrollIntoView({ behavior: 'smooth' });
-        // Konu inputuna odaklan
         document.getElementById("topic").focus();
         alert(`📌 "${type}" seçildi! Şimdi konunuzu girin ve "Gemini AI ile İçerik Oluştur" butonuna tıklayın.`);
     }
@@ -639,16 +682,21 @@
         document.getElementById("totalContent").innerText = contentLogs.length;
     }
     
-    // Demo içerik üretici
-    function generateDemoContent(contentType, styleType, topic, notes) {
-        if(styleType === "Motivasyon") {
-            return `🔥 MOTİVASYON İÇERİĞİ:\n\n${topic} yolculuğunda bugün bir adım öne geçme zamanı! Hayallerinize ulaşmak için harekete geçin. Başarı, küçük adımlarla başlar. 💪\n\n"${topic} konusunda uzmanlaşmak için bugün ilk adımı atın!"`;
-        } else if(styleType === "Akademik") {
-            return `📚 AKADEMİK İÇERİK:\n\nGiriş: ${topic} günümüzde kritik öneme sahiptir. Yapılan araştırmalar (2024) ${topic} alanında yıllık %15 büyüme olduğunu göstermektedir.\n\nBu çalışmada ${topic} konusu detaylı olarak incelenmiştir.`;
-        } else if(styleType === "Hikaye/Kurgu") {
-            return `📖 HİKAYE:\n\nBir zamanlar ${topic} konusunda kararsız kalmış bir genç vardı: Elif. Bir gün yaşlı bir bilge ona şöyle dedi: "${topic} aslında senin içindeki cesaretle başlar."\n\nO günden sonra Elif'in hayatı değişti.`;
+    // Demo içerik üretici (API yoksa yedek)
+    function generateDemoContent(contentType, topic, notes) {
+        const style = currentWritingStyle;
+        if(style === "Profesyonel / Kurumsal") {
+            return `📊 PROFESYONEL İÇERİK:\n\nSayın yetkili,\n\n${topic} konusunda kapsamlı bir değerlendirme yapılmıştır. Araştırmalar göstermektedir ki, ${topic} alanında stratejik yaklaşımlar kurumsal başarıyı doğrudan etkilemektedir.\n\nRaporumuzda detaylı analizler sunulmaktadır.`;
+        } else if(style === "Samimi / Günlük Konuşma") {
+            return `💬 MERHABA! 👋\n\n${topic} hakkında konuşalım mı? Bildiğin gibi, ${topic} hayatımızın her yerinde. Hadi gel biraz da bununla ilgili sohbet edelim.\n\nBen şahsen düşünüyorum ki...`;
+        } else if(style === "Eğlenceli / Mizahi") {
+            return `😄 EĞLENCELİ İÇERİK:\n\n${topic} deyince aklıma ilk gelen şey... 😂 İtiraf et, sen de aynısını düşünüyorsun!\n\nHadi gel, ${topic} konusunu biraz eğlenerek keşfedelim. Hazır mısın? 🎉`;
+        } else if(style === "İlham Verici / Motivasyon") {
+            return `✨ MOTİVASYON İÇERİĞİ:\n\n${topic} yolculuğunda bugün bir adım öne geçme zamanı! Hayallerine ulaşmak için harekete geç. Unutma, başarı küçük adımlarla başlar. 💪\n\n"${topic} konusunda uzmanlaşmak için bugün ilk adımı at!"`;
+        } else if(style === "Teknik / Detaylı") {
+            return `⚙️ TEKNİK DOKÜMAN:\n\n${topic} sistem mimarisi aşağıdaki bileşenlerden oluşmaktadır:\n1. Temel altyapı katmanı\n2. Veri işleme katmanı\n3. Kullanıcı arayüzü katmanı\n\nDetaylı teknik spesifikasyonlar için lütfen ekteki dokümanı inceleyin.`;
         } else {
-            return `🎙️ PODCAST SENARYOSU:\n\nBölüm: ${topic}\n\nSunucu: “Bugünkü konumuz ${topic}.”\n\nUzman: “${topic} aslında çok katmanlı bir kavram. Gelin birlikte inceleyelim.”\n\nSunucu: “Harika, başlayalım!”`;
+            return `📚 AKADEMİK İÇERİK:\n\nGiriş: ${topic} günümüzde akademik çevrelerde yoğun ilgi görmektedir. Bu çalışmada ${topic} konusu multidisipliner bir yaklaşımla ele alınmıştır.\n\nBulgular: Yapılan araştırmalar (2024) ${topic} alanında yıllık %15 büyüme olduğunu göstermektedir.`;
         }
     }
     
@@ -668,7 +716,7 @@
         
         const aiModel = document.getElementById("aiModel").value;
         const contentType = document.getElementById("contentType").value;
-        const styleType = document.getElementById("styleType").value;
+        const styleType = document.getElementById("styleTypeSelect").value;
         const topic = document.getElementById("topic").value.trim();
         const notes = document.getElementById("notes").value.trim();
         
@@ -676,24 +724,36 @@
         
         document.getElementById("output").innerHTML = "<i class='fas fa-spinner fa-pulse'></i> Gemini AI içerik üretiyor, lütfen bekleyin...";
         
+        let styleDescription = "";
+        switch(styleType) {
+            case "Profesyonel / Kurumsal": styleDescription = "Resmi, kurumsal, iş dünyasına uygun, ciddi ve profesyonel bir dil kullan."; break;
+            case "Samimi / Günlük Konuşma": styleDescription = "Günlük konuşma dili, samimi, arkadaşça, 'sen' dili kullan, kısa cümleler."; break;
+            case "Eğlenceli / Mizahi": styleDescription = "Eğlenceli, esprili, mizah içeren, emojiler kullan, genç ve dinamik bir dil."; break;
+            case "İlham Verici / Motivasyon": styleDescription = "Motivasyonel, ilham verici, güçlü ve etkileyici cümleler, hedef kitleyi harekete geçiren bir dil."; break;
+            case "Teknik / Detaylı": styleDescription = "Teknik terimler, detaylı açıklamalar, sistematik ve metodik bir anlatım, profesyonel terminoloji."; break;
+            case "Akademik / Bilimsel": styleDescription = "Akademik dil, bilimsel terimler, kaynakça atıfları, objektif ve araştırmacı bir üslup."; break;
+            default: styleDescription = "Profesyonel ve kurumsal bir dil kullan.";
+        }
+        
         let prompt = `Sen bir profesyonel içerik üreticisisin. Aşağıdaki kriterlere göre KALİTELİ ve DETAYLI bir içerik üret:
         
 Proje Adı: ${projectName}
 İçerik Türü: ${contentType}
-Anlatım Stili: ${styleType}
+Yazım Stili: ${styleType}
+Stil Açıklaması: ${styleDescription}
 Konu: ${topic}
 Ek Notlar: ${notes || "Yok"}
 
-Lütfen Türkçe, akıcı ve değerli bir içerik üret. Hedef kitleye uygun olsun. En az 300 kelime olsun.`;
+Lütfen ${styleType} stilinde, Türkçe, akıcı ve değerli bir içerik üret. Hedef kitleye uygun olsun. En az 300 kelime olsun.`;
         
         let result = await callGeminiAPI(prompt);
         
         if(!result) {
             result = `⚠️ Gemini API anahtarı geçersiz veya eksik. Lütfen yukarıdan API anahtarınızı girin.\n\n📌 Demo içerik üretiliyor...\n\n`;
-            result += generateDemoContent(contentType, styleType, topic, notes);
+            result += generateDemoContent(contentType, topic, notes);
         }
         
-        const finalContent = `🏷️ **Proje:** ${projectName}${projectNumber ? " ("+projectNumber+")" : ""}\n🤖 **AI Model:** ${aiModel}\n📌 **Tür:** ${contentType} | 🎭 **Stil:** ${styleType}\n📢 **Konu:** ${topic}\n📝 **Notlar:** ${notes || "—"}\n\n---\n\n${result}`;
+        const finalContent = `🏷️ **Proje:** ${projectName}${projectNumber ? " ("+projectNumber+")" : ""}\n🤖 **AI Model:** ${aiModel}\n📌 **Tür:** ${contentType}\n✍️ **Yazım Stili:** ${styleType}\n📢 **Konu:** ${topic}\n📝 **Notlar:** ${notes || "—"}\n\n---\n\n${result}`;
         
         lastGeneratedContent = finalContent;
         document.getElementById("output").innerHTML = finalContent.replace(/\n/g, '<br>');
@@ -846,6 +906,8 @@ Lütfen Türkçe, akıcı ve değerli bir içerik üret. Hedef kitleye uygun ols
     if(userEmail) document.getElementById("userEmail").value = userEmail;
     if(projectName) document.getElementById("projectName").value = projectName;
     if(projectNumber) document.getElementById("projectNumber").value = projectNumber;
+    document.getElementById("currentStyleName").innerHTML = currentWritingStyle;
+    document.getElementById("styleTypeSelect").value = currentWritingStyle;
     
     renderKnowledgeList();
     renderReferences();
@@ -854,6 +916,7 @@ Lütfen Türkçe, akıcı ve değerli bir içerik üret. Hedef kitleye uygun ols
     logAction("Sayfa ziyaret edildi");
     
     // Global fonksiyonlar
+    window.selectWritingStyle = selectWritingStyle;
     window.selectContentType = selectContentType;
     window.generateEbook = generateEbook;
     window.generateContentWithAI = generateContentWithAI;
